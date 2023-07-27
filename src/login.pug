@@ -1,0 +1,22 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "Вход на сайт"
+
+block content
+	section.section-login
+		.section-login__container.container
+			img.section-login__logo(src="images/logo.svg", alt)
+			.section-login__text-box
+				h1.section-login__title Вкус путешествия с «Крафт»
+				p.section-login__text Покупайте продукцию «Крафт» и получайте призы
+			form.section-login__form(action="#")
+				p.section-login__form-text Укажите дату своего рождения для входа на сайт
+				.section-login__form-grid
+					input.section-login__form-input(type="text", value="01")
+					input.section-login__form-input(type="text", value="01")
+					input.section-login__form-input(type="text", value="2000")
+				button.button.button--orange.section-login__form-button(type="submit") Войти

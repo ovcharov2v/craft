@@ -25,6 +25,12 @@ body {
 	overflow: hidden;
 }
 
+input, button, textarea {
+	&:focus {
+		outline: none;
+	}
+}
+
 button {
 	cursor: pointer;
 }
