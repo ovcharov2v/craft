@@ -1,0 +1,83 @@
+.section-where-buy {
+	@include gradient-bg;
+	padding-top: 106px;
+	padding-bottom: 90px;
+
+	&__title {
+		margin-bottom: 48px;
+		font-family: $font-secondary;
+		font-size: 48px;
+		line-height: 58px;
+		text-align: center;
+	}
+
+	&__content {
+		display: grid;
+		grid-template: auto / 1fr 2.54fr;
+		grid-column-gap: 48px;
+	}
+
+	&__button-col {
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 16px;
+		padding: 11px 24px;
+		background-color: rgba($color-white, .05);
+		border: 1px solid $color-transparent;
+		border-radius: 70px;
+		cursor: pointer;
+
+		&--orange {
+			border-color: $color-orange;
+		}
+	}
+
+	&__button-text-box {
+	}
+
+	&__button-text {
+		margin-bottom: 4px;
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 700;
+	}
+
+	&__button-addr {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		line-height: 16px;
+		color: rgba($color-white, .5)
+	}
+
+	&__button-addr-icon {
+		width: 12px;
+		height: 12px;
+		margin-right: 8px;
+	}
+
+	&__button-icon {
+		width: 24px;
+		height: 24px;
+
+		& + .section-where-buy__button-icon {
+			margin-left: 8px;
+		}
+	}
+
+	&__button-icon-box {
+		display: flex;
+	}
+
+	&__map-col {
+	}
+
+	&__map {
+		width: 100%;
+		border-radius: 32px;
+	}
+}

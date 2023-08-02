@@ -1,0 +1,68 @@
+.section-hero {
+	@include hero-bg;
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+	padding-top: 148px;
+	padding-bottom: 232px;
+
+	&__container {
+		display: grid;
+		grid-template: auto / 1.15fr 1fr;
+		grid-column-gap: 30px;
+	}
+
+	&__text-box {
+	}
+
+	&__title {
+		margin-bottom: 24px;
+		font-family: $font-secondary;
+		font-size: 90px;
+		line-height: 90px;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin-bottom: 32px;
+		font-size: 28px;
+		line-height: 40px;
+	}
+
+	&__button {
+		width: 100%;
+		max-width: 398px;
+		margin-bottom: 24px;
+	}
+
+	&__period {
+		font-size: 20px;
+		opacity: .4;
+	}
+
+	&__img-box {
+		position: relative;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		transform: translate(2.5%, -6%);
+	}
+
+	&__waves {
+		position: absolute;
+		top: 13%;
+		right: -7%;
+		max-width: 31%;
+	}
+
+	&__dashes {
+		position: absolute;
+		bottom: 8.7%;
+		left: -1%;
+		max-width: 37%;
+		color: $color-orange;
+	}
+}

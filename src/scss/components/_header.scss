@@ -1,2 +1,136 @@
 .header {
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	transition: transform .3s ease;
+
+	&--black {
+		background-color: #1A1A1A;
+	}
+
+	&--fixed {
+		position: fixed;
+		background-color: rgba(#171717, .9);
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo-link {
+		flex-shrink: 0;
+		display: inline-block;
+	}
+
+	&__logo {
+		width: 100%;
+		max-width: 213px;
+	}
+
+	&__nav {
+		padding: 8px 0 13px;
+
+		&--left {
+			margin-left: 48px;
+			margin-right: auto;
+		}
+	}
+
+	&__nav-list {
+		display: flex;
+		margin: 0 -12px;
+
+		.header__nav--left & {
+			margin: 0 -16px;
+		}
+	}
+
+	&__nav-elem {
+		padding: 0 12px;
+
+		.header__nav--left & {
+			padding: 0 16px;
+		}
+	}
+
+	&__nav-link {
+		position: relative;
+		font-size: 18px;
+
+		&--active {
+			&::before {
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 83%;
+				height: 1px;
+				border-radius: 50%;
+				background-color: $color-white;
+				content: "";
+			}
+
+			&::after {
+				position: absolute;
+				bottom: -5px;
+				right: 0;
+				width: calc(17% - 7px);
+				height: 1px;
+				border-radius: 50%;
+				background-color: $color-orange;
+				content: "";
+			}
+		}
+	}
+
+	&__user-nav {
+		padding: 6px 0;
+		color: $color-orange;
+
+		&--active {
+			display: flex;
+			align-items: center;
+			padding: 6px 16px;
+			background: rgba($color-orange, .15);
+			border-radius: 100px;
+		}
+	}
+
+	&__lk-link {
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+	}
+
+	&__user-icon {
+		width: 24px;
+		height: 24px;
+		margin-left: 8px;
+	}
+
+	&__user-nav-box {
+		text-align: right;
+	}
+
+	&__user-name {
+		font-size: 16px;
+		line-height: 18px;
+		color: $color-white;
+	}
+
+	&__user-logout {
+		display: block;
+		margin-left: auto;
+		padding: 0;
+		background-color: $color-transparent;
+		border: none;
+		font-size: 12px;
+		line-height: 1;
+		color: $color-orange;
+	}
 }

@@ -1,0 +1,346 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "Личный кабинет"
+	- isUserLoggedIn = true
+
+block content
+	// Section Data
+	section.section-data
+		.container
+			h1.section-data__title Личный кабинет
+			.section-data__grid
+				// Card
+				.data-card
+					.data-card__title-box
+						h2.data-card__title Мои коды
+						button.button.button--orange.button--orange-xs Зарегистрировать код
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__code J8753G6F18KU
+						span.data-card__status Дубликат
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__code J8753G6F18KU
+						span.data-card__status.data-card__status--green Одобрен
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__code J8753G6F18KU
+						span.data-card__status.data-card__status--green Одобрен
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__code J8753G6F18KU
+						span.data-card__status.data-card__status--green Одобрен
+					.data-card__button-box
+						button.button.button--outline-orange.data-card__refresh-button Обновить
+							+svg("refresh")(class="button__icon")
+				// Card
+				.data-card
+					.data-card__title-box
+						h2.data-card__title Мои призы
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__text Мгновенный приз
+						span.data-card__text Худи
+					// Row
+					.data-card__row
+						.data-card__text-box
+							time.data-card__time 08.07.2023
+							span.data-card__text Ежедневный розыгрыш
+						span.data-card__text Ящик пива
+					.data-card__button-box
+						button.button.button--outline-orange.data-card__refresh-button Обновить
+							+svg("refresh")(class="button__icon")
+				// Card
+				.data-card
+					.data-card__title-box
+						h2.data-card__title Мои данные
+						button.button.button--outline-orange Редактировать
+							+svg("pencil")(class="button__icon")
+					p.data-card__name Светлана Голубева
+					p.data-card__birthday Дата рождения: 18 марта 1986
+					p.data-card__contacts
+						+svg("phone")(class="data-card__contacts-icon")
+						|+7 914 555 39 59
+					p.data-card__contacts
+						+svg("envelope")(class="data-card__contacts-icon")
+						| golubeva@gmail.com
+					.data-card__info-box
+						p.data-card__info-text-big Получите +50 баллов
+							br
+							|за подтверждение e-mail
+						p.data-card__info-text Получите +50 баллов за подтверждение e-mail
+						p.data-card__info-text-small Для этого необходимо перейти по ссылке из письма. Если вы не получали письмо, то
+							|
+							|
+							a.text-orange(href="#") запросите его ещё раз.
+					.data-card__score-row
+						p.data-card__score
+							span.data-card__score-value 169
+							|Баллов
+						p.data-card__score
+							span.data-card__score-value 6
+							| Стикеров
+
+	// Section Dashboard
+	section.section-dashboard.container
+		h2.section-dashboard__title
+			span.text-orange Регистрируйте больше кодов
+			|,
+			br
+			|получайте стикеры и балы, выигрывайте призы
+		.section-dashboard__grid
+			// Col
+			.section-dashboard__col
+				h3.section-dashboard__col-title Мини пивоварня
+				p.section-dashboard__col-text Соберите 4 стикера и участвуйте в еженедельном розыгрыше
+					|
+					|
+					span.text-orange 30 ЛИТРОВ
+					|
+					|
+					| пива
+				p.section-dashboard__players Сейчас участвует:
+					|
+					|
+					span.section-dashboard__players-counter 1020
+					|
+					|
+					|человек
+				.section-dashboard__col-grid
+					// Sticker
+					figure.sticker
+						+picture("sticker1", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text ХопГан
+							span.sticker__counter 1
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker2", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Сургуч
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker3", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Дрожжи
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker4", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Цилиндро-конический танк
+				p.section-dashboard__col-status Соберите все 4 стикера для участия
+			// Col
+			.section-dashboard__col
+				h3.section-dashboard__col-title Варочный цех
+				p.section-dashboard__col-text Соберите 4 стикера и участвуйте в еженедельном розыгрыше
+					|
+					|
+					span.text-orange 45 ЛИТРОВ
+					|
+					|
+					| пива
+				p.section-dashboard__players Сейчас участвует:
+					|
+					|
+					span.section-dashboard__players-counter 1020
+					|
+					|
+					| человек
+				.section-dashboard__col-grid
+					// Sticker
+					figure.sticker
+						+picture("sticker5", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Варочный чан
+					// Sticker
+					figure.sticker
+						+picture("sticker6", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Солод
+					// Sticker
+					figure.sticker
+						+picture("sticker7", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Хмель
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker8", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Заторный чан
+							span.sticker__counter 3
+				p.section-dashboard__col-status.section-dashboard__col-status--green
+					+svg("thumbs-up")(class="section-dashboard__col-status-icon")
+					|Вы участвуете!
+			// Col
+			.section-dashboard__col
+				h3.section-dashboard__col-title Цех розлива пива
+				p.section-dashboard__col-text Соберите 4 стикера и участвуйте в еженедельном розыгрыше
+					|
+					|
+					span.text-orange 60 ЛИТРОВ
+					|
+					|
+					| пива
+				p.section-dashboard__players Сейчас участвует:
+					|
+					|
+					span.section-dashboard__players-counter 1020
+					|
+					|
+					| человек
+				.section-dashboard__col-grid
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker9", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Линия розлива
+					// Sticker
+					figure.sticker
+						+picture("sticker10", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Этикетировщик
+							span.sticker__counter 2
+					// Sticker
+					figure.sticker.sticker--disabled
+						+picture("sticker11", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Паллеты
+					// Sticker
+					figure.sticker
+						+picture("sticker12", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Кар
+				p.section-dashboard__col-status Соберите все 4 стикера для участия
+
+	// Section Instant
+	section.section-instant.section-instant--lk.container
+		.section-instant__content-box
+			h2.section-instant__title
+				+svg("lightning")(class="section-instant__title-icon")
+				|Мгновенные призы
+			p.section-instant__text
+				span.text-orange ПОКУПАЙТЕ БОЛЬШЕ
+				|
+				|
+				|продукции и получите шанс выиграть мгновенные призы
+			.section-instant__grid
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg1
+						.instant-card__img-box
+							+picture("instant-card-img1")(class="instant-card__img")
+						figcaption.instant-card__text Майка
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg1
+						.instant-card__img-box
+							+picture("instant-card-img2")(class="instant-card__img")
+						figcaption.instant-card__text Худи
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg2
+						.instant-card__img-box
+							+picture("instant-card-img3")(class="instant-card__img")
+						figcaption.instant-card__text Открывашка
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg3
+						.instant-card__img-box
+							+picture("instant-card-img4")(class="instant-card__img")
+						figcaption.instant-card__text Бутылка крафтового
+							br
+							|пива
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg4
+						.instant-card__img-box
+							+picture("instant-card-img5")(class="instant-card__img")
+						figcaption.instant-card__text Шопер
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg5
+						.instant-card__img-box
+							+picture("instant-card-img6")(class="instant-card__img")
+						figcaption.instant-card__text Термос *
+				.section-instant__grid-col
+					// Card
+					figure.instant-card.instant-card--bg6
+						.instant-card__img-box
+							+picture("instant-card-img7")(class="instant-card__img")
+						figcaption.instant-card__text Волейбольный
+							br
+							|мяч *
+
+	// Section Prizes
+	section.section-prizes.section-prizes--lk.container
+		h2.section-prizes__title
+			| Вы накопили
+			|
+			|
+			span.text-orange.section-prizes__title-number 150
+			|
+			|
+			span.text-orange баллов!
+		.section-prizes__grid
+			// Prize
+			article.prize
+				p.prize__label.prize__label--light Ежедневный розыгрыш
+				p.prize__condition Среди всех, у кого не менее 100 баллов
+				+picture("prize-img1")(class="prize__img")
+				h3.prize__title Ящик классического пива
+				p.prize__players Сейчас участвует: 1020 человек
+				.prize__status
+					+svg("thumbs-up")(class="prize__status-icon")
+					|Вы участвуете!
+			// Prize
+			article.prize
+				p.prize__label Еженедельный розыгрыш
+				p.prize__condition Среди всех, у кого не менее 250 баллов
+				+picture("prize-img2")(class="prize__img")
+				h3.prize__title Электрогриль *
+				p.prize__players Сейчас участвует: 1020 человек
+				.prize__progress
+					.prize__progress-value.prize__progress-value--yellow(style="width:30%")
+				p.prize__progress-text Необходимо ещё 100 баллов для участия
+			// Prize
+			article.prize.prize--main
+				p.prize__label.prize__label--light
+					+svg("star")(class="prize__label-icon")
+					|Главный приз
+				p.prize__condition Среди всех, у кого не менее 1000 баллов
+				+picture("prize-img3")(class="prize__img")
+				h3.prize__title Путешествие на двоих *
+				p.prize__players Сейчас участвует: 1020 человек
+				.prize__progress
+					.prize__progress-value.prize__progress-value--green(style="width:70%")
+				p.prize__progress-text Необходимо ещё 100 баллов для участия
+
+	// Section Instant Prizes
+	section.section-instant-prizes.container
+		h2.section-instant-prizes__title
+		p.section-instant-prizes__text
+		.section-instant-prizes__grid
+
+
+	// Section Lk text
+	section.section-lk-text.container
+		h2.section-lk-text__text Светлана, желаем вам удачи!
+		p.section-lk-text__text Если остались вопросы —
+			|
+			|
+			span.text-orange напишите нам
+			|.

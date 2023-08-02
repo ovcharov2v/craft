@@ -3,6 +3,11 @@ include mixins
 block vars
 	-
 		var baseDir = './'
+		var showHeader = true
+		var showFooter = true
+		var isHeaderBlack = false
+		var isHeaderMenuLeft = false
+		var isUserLoggedIn = false
 	-
 		var title = typeof title !== 'undefined' ? title : null
 		var description = typeof description !== 'undefined' ? description : null
@@ -279,11 +284,13 @@ html(class=html.classList)&attributes(html.attrs)
 			link(rel="stylesheet" href!=`${baseDir}css/main.css?v=${Date.now()}`)
 		block head-end
 	body(class=body.classList)&attributes(body.attrs)
-		+header()
+		if showHeader
+			+header()
 		block body-start
 		main.main
 			block content
-		+footer()
+		if showFooter
+			+footer()
 		include ../images/sprite/sprite.svg
 		block scripts
 			script(src!=`${baseDir}js/vendor.js?v=${Date.now()}`)

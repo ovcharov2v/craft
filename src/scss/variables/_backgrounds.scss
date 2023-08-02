@@ -1,0 +1,36 @@
+@mixin hero-bg {
+	position: relative;
+	z-index: 0;
+	background-image: radial-gradient(101.02% 101.02% at 50.00% -1.02%, #4E1D00 0%, #171717 61.17%);
+
+	&::before,
+	&::after {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: "";
+	}
+
+	&::before {
+		background-image: url("../images/bg1.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: .1;
+	}
+
+	&::after {
+		background-image: url("../images/noise.png");
+		background-size: 300px 300px;
+		background-repeat: repeat;
+	}
+}
+
+@mixin gradient-bg {
+	flex-grow: 1;
+	background-image: linear-gradient(180deg, rgba(255, 116, 34, 0.20) 0%, rgba(5, 2, 0, 0.20) 100%);
+	background-position: top center;
+}

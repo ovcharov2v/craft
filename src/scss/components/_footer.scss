@@ -1,2 +1,26 @@
 .footer {
+	padding-top: 48px;
+	padding-bottom: 48px;
+	background-color: #000;
+	border-top: 1px solid rgba($color-white, .15);
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__text-box {
+		max-width: 700px;
+		margin-right: 30px;
+		font-size: 14px;
+		line-height: 16px;
+		color: rgba($color-white, .4)
+	}
+
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: 14px;
+		}
+	}
 }

@@ -1,0 +1,70 @@
+.form-group {
+	&:not(:last-child) {
+		margin-bottom: 12px;
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: 12px;
+		font-size: 18px;
+		line-height: 21px;
+		color: rgba($color-white, .5);
+
+		&--small {
+			font-size: 16px;
+			line-height: 18px;
+		}
+
+		&--center {
+			text-align: center;
+		}
+	}
+
+	&__row {
+		display: grid;
+		grid-template: auto / repeat(2, 1fr);
+		grid-column-gap: 24px;
+	}
+
+	&__input {
+		display: block;
+		width: 100%;
+		padding: 16px 24px;
+		border: 1px solid rgba($color-white, .5);
+		border-radius: 32px;
+		background-color: $color-transparent;
+		font-size: 18px;
+		line-height: 21px;
+		color: $color-white;
+		transition: border-color $transition-default;
+
+		&:hover {
+			border: 1px solid rgba($color-white, .8);
+		}
+
+		&:focus {
+			border: 1px solid $color-white;
+		}
+
+		&--textarea {
+			height: 146px;
+			resize: none;
+		}
+
+		.form-group--error & {
+			border-color: rgba(#BA3A42, .5);
+		}
+	}
+
+	&__error-text {
+		display: none;
+		margin-top: 2px;
+		font-size: 12px;
+		line-height: 14px;
+		color: #BA3A42;
+
+		.form-group--error & {
+			display: block;
+		}
+	}
+}

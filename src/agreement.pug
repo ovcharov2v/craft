@@ -1,0 +1,26 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "Политика"
+	- isHeaderBlack = true
+	- isHeaderMenuLeft = true
+
+block content
+	// Section Agreement
+	section.section-agreement
+		.container
+			h1.section-agreement__title Политика обработки персональных данных
+			- var n = 0
+			while n < 3
+				.section-agreement__chapter
+					h2.section-agreement__chapter-title Заголовок раздела
+					p.section-agreement__text Lorem ipsum dolor sit amet consectetur. Semper et felis ut at tortor tellus velit. Varius netus eu vitae pharetra. Id amet tellus elit risus senectus. Egestas sollicitudin cras justo in fermentum vestibulum suspendisse. Pretium pellentesque cursus sed urna diam tellus scelerisque. Aliquam quis feugiat sit habitant metus aliquam. Lectus eu in sapien ut nisl tristique massa turpis laoreet. Pellentesque eget elit tincidunt tellus malesuada suspendisse eget. Morbi diam arcu scelerisque a nulla tellus in.
+					p.section-agreement__text Odio arcu morbi felis sem vitae. Tristique sollicitudin elit facilisis rhoncus at nunc vulputate mattis iaculis. Vulputate nisl risus sed arcu non sed. Nullam senectus diam consectetur molestie id nisi. Facilisis iaculis et pellentesque ullamcorper feugiat velit. Non amet a pellentesque lacus turpis. Massa justo ut tincidunt eu adipiscing. Ornare vitae est tempus proin purus nunc sit pharetra fermentum. Et placerat aliquet nunc pulvinar. Neque elit ac egestas pellentesque enim mattis. Nulla neque at sit orci tortor magna egestas.
+					p.section-agreement__text Massa scelerisque pharetra lectus diam arcu neque tempus nisl. Nec id morbi fames fames maecenas adipiscing convallis tortor. A ultrices leo vitae urna elementum id non faucibus. Et vestibulum cursus scelerisque volutpat scelerisque. Odio risus nunc leo viverra. Sed laoreet volutpat ullamcorper felis convallis facilisi. Maecenas amet scelerisque a lacus eget. Adipiscing in lacinia in malesuada eu quis eget. Ullamcorper aliquet commodo tristique ac purus in consequat.
+					p.section-agreement__text Vitae non nibh nec hendrerit morbi imperdiet. Ut magna faucibus cursus lacus. Id eu netus donec sed. Augue donec orci at tellus semper adipiscing cras arcu morbi. Cursus lacus nisl cursus non enim gravida sit aliquet at. Ut dictum quisque posuere etiam lacinia eget. Mauris congue vitae neque phasellus tellus vel pellentesque.
+					p.section-agreement__text Velit enim dictum et scelerisque massa et volutpat euismod. Condimentum aenean in auctor amet massa semper quis dictum in. Nisi adipiscing nunc sit dignissim mus sit rutrum. Neque eget ultricies sagittis ultrices. Feugiat etiam maecenas vehicula elit fermentum consequat nisi. Ultrices hendrerit faucibus nisi a. Vitae egestas dolor quam nulla. Facilisis mauris cras odio rutrum aenean aliquet malesuada aliquam. Id a turpis vitae vitae platea. Ornare tincidunt lorem aliquam varius bibendum turpis porta pretium. Sed quis id feugiat viverra nec volutpat.
+					p.section-agreement__text Ac diam phasellus id posuere. Lorem arcu dolor tellus leo ultrices dictum at accumsan fringilla. Diam faucibus non sociis aliquam donec varius libero sem ut. Varius suscipit purus lorem auctor hendrerit mattis turpis ipsum pretium. Sagittis sit viverra accumsan lectus sagittis leo commodo vel. Arcu eu ornare non ac varius lectus magna sit elementum. A viverra consequat magna ipsum id viverra. Egestas volutpat in urna luctus curabitur viverra in nunc. Aliquam volutpat quam leo dictumst massa id. Condimentum eu viverra arcu suspendisse egestas vestibulum quam pulvinar. Ornare volutpat aliquam vitae massa sit morbi massa mi senectus.
+				- n++

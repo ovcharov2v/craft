@@ -1,20 +1,125 @@
 .button {
 	position: relative;
-	display: inline-block;
-	padding: 21px 24px;
-	border: 1px solid;
-	border-radius: 100px;
-	font-size: 24px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	line-height: 1;
 	font-weight: 700;
+	border: none;
+	border-radius: 100px;
 	text-align: center;
 	white-space: nowrap;
 	transition: color $transition-default, background-color $transition-default;
 
 	&--orange {
+		padding: 21px 24px;
 		background-color: $color-orange;
 		border-color: $color-orange;
+		font-size: 24px;
 		color: $color-white;
 		box-shadow: 0 15px 40px rgba($color-orange, .3);
+
+		&:hover,
+		&:focus {
+			background-color: #bf662a;
+		}
+
+		&:active {
+			background-color: #8f4c1f;
+		}
+
+		&:disabled {
+			background-color: rgba($color-white, .4);
+			color: #1A1A1A;
+			box-shadow: none;
+		}
+
+		&-md {
+			padding: 16px 28px;
+			font-size: 20px;
+			font-weight: 400;
+		}
+
+		&-sm {
+			padding: 14px 24px;
+			font-size: 18px;
+		}
+
+		&-xs {
+			padding: 12px 20px;
+			font-size: 16px;
+		}
+	}
+
+	&--outline-orange {
+		padding: 8px 12px;
+		background-color: $color-transparent;
+		font-size: 16px;
+		border: 1px solid $color-orange;
+		color: $color-orange;
+
+		&:hover,
+		&:focus {
+			background-color: #bf662a;
+			border-color: #bf662a;
+			color: $color-white;
+		}
+
+		&:active {
+			background-color: #8f4c1f;
+			border-color: #8f4c1f;
+			color: $color-white;
+		}
+	}
+
+	&--white {
+		padding: 16px 32px;
+		font-size: 18px;
+		background-color: $color-white;
+		color: #000;
+
+		&:hover,
+		&:focus {
+			background-color: #fdf3ea;
+		}
+
+		&:active {
+			background-color: #f9d8bf;
+		}
+	}
+
+	&--gray {
+		padding: 12px 21px;
+		background-color: rgba($color-white, .1);
+		font-size: 16px;
+		font-weight: 400;
+		color: rgba($color-white, .8);
+
+		&:hover,
+		&:focus {
+			background-color: #bf662a;
+			border-color: #bf662a;
+			color: $color-white;
+		}
+
+		&:active {
+			background-color: #8f4c1f;
+			border-color: #8f4c1f;
+			color: $color-white;
+		}
+	}
+
+	&__icon {
+		margin-left: 8px;
+
+		.button--outline-orange & {
+			width: 16px;
+			height: 16px;
+		}
+
+		.button--gray & {
+			width: 20px;
+			height: 20px;
+		}
 	}
 }

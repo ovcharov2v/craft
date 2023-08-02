@@ -1,0 +1,30 @@
+.section-agreement {
+	@include gradient-bg;
+	padding-top: 112px;
+	padding-bottom: 52px;
+
+	&__title {
+		margin-bottom: 58px;
+		font-family: $font-secondary;
+		font-size: 48px;
+		line-height: 58px;
+		text-align: center;
+	}
+
+	&__chapter {
+		margin-bottom: 48px;
+	}
+
+	&__chapter-title {
+		margin-bottom: 24px;
+		font-family: $font-secondary;
+		font-size: 38px;
+		line-height: 38px;
+		text-align: center
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 18px;
+	}
+}

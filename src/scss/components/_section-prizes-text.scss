@@ -1,0 +1,17 @@
+.section-prizes-text {
+	padding-top: 64px;
+	padding-bottom: 32px;
+	text-align: center;
+
+	&__title {
+		margin-bottom: 8px;
+		font-family: $font-secondary;
+		font-size: 64px;
+		line-height: 77px;
+	}
+
+	&__text {
+		font-size: 28px;
+		line-height: 32px;
+	}
+}

@@ -1,6 +1,41 @@
+// Common
 @import "button";
-
+@import "dropdown";
+@import "checkbox";
+@import "option";
+@import "form-group";
 @import "header";
 @import "footer";
+@import "modal";
 
+// Page Login
 @import "section-login";
+
+// Page Rules and prizes
+@import "section-hero";
+@import "black-wrapper";
+@import "step";
+@import "section-steps";
+@import "section-prizes-text";
+@import "instant-prize";
+@import "section-instant";
+@import "prize";
+@import "section-prizes";
+
+// Page LK
+@import "data-card";
+@import "section-data";
+@import "sticker";
+@import "section-dashboard";
+@import "instant-card";
+@import "section-capital";
+@import "section-lk-text";
+
+// Page Winners
+@import "section-winners";
+
+// Page Where to buy
+@import "section-where-buy";
+
+// Page Agreement
+@import "section-agreement";

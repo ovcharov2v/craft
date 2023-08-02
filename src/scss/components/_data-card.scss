@@ -1,0 +1,153 @@
+.data-card {
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	border-radius: 32px;
+	border: 1px solid rgba($color-white, .05);
+	background: rgba(#000, .20);
+	backdrop-filter: blur(15px);
+
+	&__title-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 58px;
+		margin-bottom: 15px;
+		padding-bottom: 16px;
+		border-bottom: 1px dashed rgba($color-white, .15);
+	}
+
+	&__title {
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 700;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text-box {
+	}
+
+	&__time {
+		display: block;
+		font-size: 12px;
+		line-height: 14px;
+		color: rgba($color-white, .4);
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	&__code {
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	&__status {
+		font-size: 20px;
+		line-height: 23px;
+		color: #7B7B7B;
+
+		&--green {
+			color: #40FD48;
+		}
+	}
+
+	&__name {
+		margin-bottom: 4px;
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	&__birthday {
+		margin-bottom: 16px;
+		font-size: 16px;
+		line-height: 18px;
+		color: rgba($color-white, .4);
+	}
+
+	&__contacts {
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+	&__contacts-icon {
+		width: 20px;
+		height: 20px;
+		margin-right: 12px;
+	}
+
+	&__info-box {
+		margin-bottom: 16px;
+		padding: 12px;
+		border-radius: 12px;
+		background: rgba(255, 116, 34, 0.05);
+	}
+
+	&__info-text-big {
+		margin-bottom: 6px;
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	&__info-text {
+		margin-bottom: 2px;
+		font-size: 14px;
+		line-height: 14px;
+		color: rgba($color-white, .6);
+	}
+
+	&__info-text-small {
+		font-size: 12px;
+		line-height: 14px;
+		color: rgba($color-white, .6);
+	}
+
+	&__score-row {
+		display: grid;
+		grid-template: auto / repeat(2, 1fr);
+		grid-column-gap: 16px;
+	}
+
+	&__score {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px;
+		border-radius: 50px;
+		background: rgba(255, 255, 255, 0.05);
+		font-size: 14px;
+		line-height: 16px;
+		text-transform: uppercase;
+	}
+
+	&__score-value {
+		margin-right: 8px;
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 700;
+		color: $color-orange
+	}
+
+	&__button-box {
+		margin-top: auto;
+	}
+
+	&__refresh-button {
+		width: 100%;
+		max-width: 135px;
+	}
+}

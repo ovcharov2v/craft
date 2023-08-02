@@ -1,0 +1,26 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "Победители"
+	- isHeaderMenuLeft = true
+
+block content
+	section.section-winners
+		.container
+			h1.section-winners__title Победители
+			.section-winners__row-box
+				- var n = 1
+				while n <= 8
+					// Row
+					.section-winners__row
+						time.section-winners__text.section-winners__text--time 23.06.2023
+						p.section-winners__text Станислав
+						p.section-winners__text +7 987 *** ** 34
+						p.section-winners__text Мгновенный приз
+						p.section-winners__text Фирменное худи
+						- n++
+			.section-winners__button-box
+				button.button.button--orange.button--orange-xs Показать еще

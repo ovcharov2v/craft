@@ -1,0 +1,99 @@
+.section-instant {
+	padding-top: 32px;
+	padding-bottom: 10px;
+
+	&--lk {
+		padding-top: 53px;
+		padding-bottom: 40px;
+	}
+
+	&__content-box {
+		padding: 32px 32px 6px;
+		border-radius: 32px;
+		background: rgba(255, 116, 34, 0.05);
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 26px;
+		font-family: $font-secondary;
+		font-size: 40px;
+		line-height: 48px;
+
+		.section-instant--lk & {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__title-icon {
+		width: 32px;
+		height: 32px;
+		margin-right: 12px;
+	}
+
+	&__text {
+		margin-bottom: 72px;
+		font-size: 28px;
+		line-height: 32px;
+		text-align: center;
+	}
+
+	&__slider {
+		position: relative;
+		padding: 0 56px;
+	}
+
+	&__slider-nav {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		pointer-events: none;
+	}
+
+	&__slider-btn {
+		padding: 10px;
+		border: none;
+		background-color: $color-transparent;
+		pointer-events: all;
+
+		&--prev {
+			transform: translateX(-10px);
+		}
+
+		&--next {
+			transform: translateX(10px);
+		}
+	}
+
+	&__slider-btn-icon {
+		width: 32px;
+		height: 32px;
+
+		.section-instant__slider-btn--next & {
+			transform: scaleX(-1);
+		}
+	}
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 -12px;
+	}
+
+	&__grid-col {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 25%;
+		margin-bottom: 24px;
+		padding: 0 12px;
+	}
+}

@@ -1,0 +1,172 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "Правила и призы"
+
+block content
+	// Section Hero
+	section.section-hero
+		.section-hero__container.container
+			.section-hero__text-box
+				h1.section-hero__title Вкус
+					br
+					|путешествия
+					br
+					|с «Крафт»
+				p.section-hero__text Покупайте продукцию «Крафт» и получайте призы!
+					br
+					|Главный приз - путешествие на двоих.
+				a.button.button--orange.section-hero__button(href="#") Зарегистрировать код
+				p.section-hero__period Регистрация кодов с 20 июля по 12 октября 2023 г
+			.section-hero__img-box
+				+picture("hero-img1")(class="section-hero__img")
+				+svg("waves")(class="section-hero__waves")
+				+svg("dashes")(class="section-hero__dashes")
+	.black-wrapper
+		// Section Steps
+		.section-steps.container
+			.section-steps__grid
+				// Elem
+				figure.section-steps__elem.step
+					+picture("steps-img1")(class="step__img")
+					figcaption
+						p.step__text Покупайте продукцию Крафт со знаком «Вкус путешествия с «Крафт»»
+				+svg("steps-arrow")(class="section-steps__arrow")
+				// Elem
+				figure.section-steps__elem.step
+					+picture("steps-img2")(class="step__img")
+					figcaption
+						p.step__text Регистрируйте
+							br
+							|коды из под крышек, получайте баллы и стикеры
+				+svg("steps-arrow")(class="section-steps__arrow")
+				// Elem
+				figure.section-steps__elem.step
+					+picture("steps-img3")(class="step__img")
+					figcaption
+						p.step__text Участвуйте в розыгрыше призов каждый день
+			.section-steps__button-box
+				a.button.button--orange.button--orange-sm.section-steps__button(href="#") Зарегистрировать
+
+		// Section Prizes text
+		section.section-prizes-text.container
+			h2.section-prizes-text__title Призы
+			p.section-prizes-text__text Чем БОЛЬШЕ КОДОВ , тем ВЫШЕ ШАНС получить призы!
+
+		// Section Instant
+		section.section-instant.container
+			h2.section-instant__title
+				+svg("lightning")(class="section-instant__title-icon")
+				|Мгновенные призы
+			.section-instant__slider
+				.swiper
+					.swiper-wrapper
+						// Slide
+						figure.instant-prize.swiper-slide
+							.instant-prize__img-box
+								+picture("prize-instant-img1")(class="instant-prize__img")
+							figcaption.instant-prize__text Майка
+						// Slide
+						figure.instant-prize.swiper-slide
+							.instant-prize__img-box
+								+picture("prize-instant-img2")(class="instant-prize__img")
+							figcaption.instant-prize__text Худи
+						// Slide
+						figure.instant-prize.swiper-slide
+							.instant-prize__img-box
+								+picture("prize-instant-img3")(class="instant-prize__img")
+							figcaption.instant-prize__text Открывашка
+						// Slide
+						figure.instant-prize.swiper-slide
+							.instant-prize__img-box
+								+picture("prize-instant-img4")(class="instant-prize__img")
+							figcaption.instant-prize__text Бутылка
+								br
+								| крафтового
+								br
+								| пива
+						// Slide
+						figure.instant-prize.swiper-slide
+							+picture("prize-instant-img3")(class="instant-prize__img")
+							figcaption.instant-prize__text Открывашка
+						// Slide
+						figure.instant-prize.swiper-slide
+							+picture("prize-instant-img4")(class="instant-prize__img")
+							figcaption.instant-prize__text Бутылка
+								br
+								| пива
+				.section-instant__slider-nav
+					button.section-instant__slider-btn.section-instant__slider-btn--prev
+						+svg("slider-arrow")(class="section-instant__slider-btn-icon")
+					button.section-instant__slider-btn.section-instant__slider-btn--next
+						+svg("slider-arrow")(class="section-instant__slider-btn-icon")
+
+		// Section Prizes
+		section.section-prizes.section-prizes--score.container
+			h2.section-prizes__title
+				+svg("clock")(class="section-prizes__title-icon")
+				|Призы за баллы
+			.section-prizes__grid
+				// Prize
+				article.prize
+					p.prize__label.prize__label--light Ежедневный розыгрыш
+					p.prize__condition Среди всех, у кого не менее 100 баллов
+					+picture("prize-img1")(class="prize__img")
+					h3.prize__title Ящик классического пива
+					p.prize__players Сейчас участвует: 1020 человек
+				// Prize
+				article.prize
+					p.prize__label Еженедельный розыгрыш
+					p.prize__condition Среди всех, у кого не менее 250 баллов
+					+picture("prize-img2")(class="prize__img")
+					h3.prize__title Электрогриль *
+					p.prize__players Сейчас участвует: 1020 человек
+				// Prize
+				article.prize.prize--main
+					p.prize__label.prize__label--light
+						+svg("star")(class="prize__label-icon")
+						|Главный приз
+					p.prize__condition Среди всех, у кого не менее 1000 баллов
+					+picture("prize-img3")(class="prize__img")
+					h3.prize__title Путешествие на двоих *
+					p.prize__players Сейчас участвует: 1020 человек
+
+		// Section Prizes
+		section.section-prizes.section-prizes--sticker.container
+			h2.section-prizes__title
+				+svg("target")(class="section-prizes__title-icon")
+				|Призы за коллекции стикеров
+			.section-prizes__grid
+				// Prize
+				article.prize
+					p.prize__label Еженедельный розыгрыш
+					p.prize__condition Среди всех, у кого 4 стикера
+						br
+						|"Мини пивоварня"
+					+picture("prize-img4")(class="prize__img")
+					h3.prize__title 30 литров пива
+					p.prize__players Сейчас участвует: 1020 человек
+				// Prize
+				article.prize
+					p.prize__label Еженедельный розыгрыш
+					p.prize__condition Среди всех, у кого 4 стикера
+						br
+						|"Варочный цех"
+					+picture("prize-img1")(class="prize__img")
+					h3.prize__title 45 литров пива
+					p.prize__players Сейчас участвует: 1020 человек
+				// Prize
+				article.prize
+					p.prize__label
+						|Еженедельный розыгрыш
+					p.prize__condition Среди всех, у кого 4 стикера
+						br
+						|"Цех розлива пива"
+					+picture("prize-img5")(class="prize__img")
+					h3.prize__title 60 литров пива
+					p.prize__players Сейчас участвует: 1020 человек
+
+

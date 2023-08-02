@@ -1,0 +1,30 @@
+.option {
+	&__input {
+		display: none;
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px 24px;
+		border: 1px solid rgba($color-white, .5);
+		border-radius: 50px;
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 700;
+		color: rgba($color-white, .5);
+		cursor: pointer;
+		transition: border-color $transition-default, color $transition-default;
+
+		.option__input:checked + & {
+			border-color: $color-orange;
+			color: $color-white;
+		}
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+	}
+}

@@ -1,0 +1,26 @@
+.section-steps {
+	max-width: 1060px;
+	margin-top: -156px;
+	padding-bottom: 18px;
+
+	&__grid {
+		display: grid;
+		grid-template: auto / minmax(0, 1fr) 40px minmax(0, 1.1fr) 40px minmax(0, 1fr);
+		grid-column-gap: 24px;
+		margin-bottom: 24px;
+	}
+
+	&__elem {
+		align-self: end;
+	}
+
+	&__arrow {
+		width: 40px;
+		height: 25px;
+		margin: auto 0 10px;
+	}
+
+	&__button-box {
+		text-align: center;
+	}
+}

@@ -1,0 +1,46 @@
+.section-winners {
+	@include gradient-bg;
+	padding-top: 107px;
+	padding-bottom: 100px;
+
+	&__title {
+		margin-bottom: 48px;
+		font-family: $font-secondary;
+		font-size: 48px;
+		line-height: 58px;
+		text-align: center;
+	}
+
+	&__row-box {
+		margin-bottom: 48px;
+	}
+
+	&__row {
+		display: grid;
+		grid-template: auto / auto repeat(4, 1fr);
+		grid-column-gap: 32px;
+		padding: 17px 32px;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 50px;
+		font-size: 16px;
+		line-height: 1;
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__text {
+		&:nth-child(n+3) {
+			text-align: center;
+		}
+
+		&--time {
+			color: rgba($color-white, .5)
+		}
+	}
+
+	&__button-box {
+		text-align: center;
+	}
+}

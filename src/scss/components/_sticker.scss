@@ -1,0 +1,80 @@
+.sticker {
+	position: relative;
+	padding: 18px 18px 14px;
+	text-align: center;
+	border-radius: 32px;
+	border: 6px solid #251A15;
+	background: url("../images/sticker-bg.png"), radial-gradient(100.00% 100.00% at 49.91% -0.00%, rgba(255, 116, 34, 0.15) 0%, rgba(0, 0, 0, 0.00) 100%);
+	backdrop-filter: blur(15px);
+	cursor: pointer;
+	transition: box-shadow $transition-default;
+
+	&::before {
+		position: absolute;
+		border-radius: 26px;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url("../images/sticker-bg.png"), radial-gradient(100.00% 100.00% at 49.91% -0.00%, rgba(255, 116, 34, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%);
+		content: "";
+		opacity: 0;
+		transition: opacity $transition-default;
+	}
+
+	&--disabled {
+		border: 6px solid rgba(37, 26, 21, 0.30);
+		background: rgba(0, 0, 0, 0.20);
+		cursor: default;
+	}
+
+	&--no-hover {
+		cursor: default;
+	}
+
+	&:not(.sticker--disabled):not(.sticker--no-hover):hover {
+		box-shadow: 0 0 30px 0 rgba(255, 116, 34, 0.30);
+
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&__img {
+		margin-bottom: 8px;
+		max-width: 100%;
+		border-radius: 16px;
+		box-shadow: 0 0 30px rgba($color-orange, .3);
+
+		.sticker--disabled & {
+			opacity: .5;
+			filter: grayscale(1);
+		}
+	}
+
+	&__text {
+		min-height: 38px;
+		font-size: 18px;
+		line-height: 18px;
+
+		.sticker--disabled & {
+			color: rgba($color-white, .5)
+		}
+	}
+
+	&__counter {
+		position: absolute;
+		top: -4px;
+		right: -5px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 24px;
+		padding: 6px;
+		background-color: #515151;
+		border-radius: 50px;
+		font-size: 12px;
+		line-height: 1;
+	}
+}
