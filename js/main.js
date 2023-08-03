@@ -266,13 +266,20 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!*************************************!*\
   !*** ./src/js/components/_modal.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+
+
 
 // Open modal window
-var modalLinks = document.querySelectorAll("[data-modal]");
+var modalLinks = document.querySelectorAll('[data-modal]');
 modalLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
     showModal(e.target.dataset.modal);
     return false;
@@ -286,49 +293,78 @@ function showModal(modalName) {
     console.log("Modal #".concat(modalName, " does not exist!"));
     return;
   }
-  if (document.querySelector(".modal--shown")) {
+  if (document.querySelector('.modal--shown')) {
     closeModal();
   }
-
-  //setBodyOverflowHidden();
-
-  modal.classList.add("modal--show");
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+  modal.classList.add('modal--show');
+  initSlider(modal);
   setTimeout(function () {
-    modal.classList.add("modal--backdrop");
+    modal.classList.add('modal--backdrop');
   }, 50, modal);
   setTimeout(function () {
-    modal.classList.add("modal--shown");
+    modal.classList.add('modal--shown');
   }, 300, modal);
 }
 
 // Close modal window
 function closeModal() {
-  var modal = document.querySelector(".modal--shown");
-  modal.classList.remove("modal--shown");
+  var modal = document.querySelector('.modal--shown');
+  modal.classList.remove('modal--shown');
   setTimeout(function () {
-    modal.classList.remove("modal--backdrop");
+    modal.classList.remove('modal--backdrop');
   }, 150, modal);
   setTimeout(function () {
-    modal.classList.remove("modal--show");
-    removeBodyOverflowHidden();
+    modal.classList.remove('modal--show');
   }, 350, modal);
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
 }
-var closeButtons = document.querySelectorAll(".js-modal-close");
+var closeButtons = document.querySelectorAll('.js-modal-close');
 closeButtons.forEach(function (button) {
-  button.addEventListener("click", closeModal);
+  button.addEventListener('click', closeModal);
 });
 
 // Close on backdrop click
-var modalList = document.querySelectorAll(".modal");
+var modalList = document.querySelectorAll('.modal');
 if (modalList) {
   modalList.forEach(function (modal) {
-    modal.addEventListener("click", function (e) {
-      if (e.target.classList.contains("modal")) {
+    modal.addEventListener('click', function (e) {
+      if (e.target.classList.contains('modal')) {
         closeModal();
       }
     });
   });
 }
+var slider = null;
+var initSlider = function initSlider(modal) {
+  var sliderEl = modal.querySelector('.modal__slider');
+  if (!sliderEl || slider) return;
+  slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["EffectCreative"]],
+    watchSlidesProgress: true,
+    slidesPerView: 5,
+    spaceBetween: 0,
+    loop: true,
+    effect: "creative",
+    centeredSlides: true,
+    creativeEffect: {
+      limitProgress: 5,
+      prev: {
+        translate: ['-100%', 0, 0],
+        scale: [.7]
+      },
+      next: {
+        translate: ['100%', 0, 0],
+        scale: [.7]
+      }
+    }
+  });
+  setInterval(function () {
+    slider.slideNext();
+  }, 1000, slider);
+};
 
 /***/ }),
 
@@ -379,7 +415,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/_dropdown */ "./src/js/components/_dropdown.js");
 /* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_dropdown__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/_modal */ "./src/js/components/_modal.js");
-/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_modal__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/_form */ "./src/js/components/_form.js");
 
 
