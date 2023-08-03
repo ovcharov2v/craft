@@ -234,31 +234,30 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener('DOMContentLoaded', function () {
+function headerWatcher() {
   var header = document.querySelector('.header');
   if (!header) return;
-  function headerWatcher() {
-    if (window.scrollY < 600) {
-      if (isHeaderFixed) {
-        header.style.transform = 'translateY(-100%)';
-        setTimeout(function () {
-          header.classList.remove('header--fixed');
-          header.style.transform = '';
-        }, 300);
-      }
-    } else {
-      if (!isHeaderFixed) {
-        header.style.transform = 'translateY(-100%)';
-        setTimeout(function () {
-          header.classList.add('header--fixed');
-          header.style.transform = '';
-        }, 300);
-      }
+  var isHeaderFixed = header.classList.contains('header--fixed');
+  if (window.scrollY < 600) {
+    if (isHeaderFixed) {
+      header.style.transform = 'translateY(-100%)';
+      setTimeout(function () {
+        header.classList.remove('header--fixed');
+        header.style.transform = '';
+      }, 300);
     }
-    requestAnimationFrame(headerWatcher);
+  } else {
+    if (!isHeaderFixed) {
+      header.style.transform = 'translateY(-100%)';
+      setTimeout(function () {
+        header.classList.add('header--fixed');
+        header.style.transform = '';
+      }, 300);
+    }
   }
-  headerWatcher();
-});
+  requestAnimationFrame(headerWatcher);
+}
+headerWatcher();
 
 /***/ }),
 

@@ -485,9 +485,9 @@ a {
     -webkit-box-shadow: 0 15px 40px rgba(255, 116, 34, 0.3);
             box-shadow: 0 15px 40px rgba(255, 116, 34, 0.3); }
     .button--orange:hover, .button--orange:focus {
-      background-color: #FF7422; }
+      background-color: #bf662a; }
     .button--orange:active {
-      background-color: #FF7422; }
+      background-color: #8f4c1f; }
     .button--orange:disabled {
       background-color: rgba(255, 255, 255, 0.4);
       color: #1A1A1A;
@@ -509,23 +509,37 @@ a {
     font-size: 16px;
     border: 1px solid #FF7422;
     color: #FF7422; }
+    .button--outline-orange:hover, .button--outline-orange:focus {
+      background-color: #bf662a;
+      border-color: #bf662a;
+      color: #fff; }
+    .button--outline-orange:active {
+      background-color: #8f4c1f;
+      border-color: #8f4c1f;
+      color: #fff; }
   .button--white {
     padding: 16px 32px;
     font-size: 18px;
     background-color: #fff;
     color: #000; }
     .button--white:hover, .button--white:focus {
-      background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 116, 34, 0.1)), to(rgba(255, 116, 34, 0.1))), #FFF;
-      background: linear-gradient(0deg, rgba(255, 116, 34, 0.1) 0%, rgba(255, 116, 34, 0.1) 100%), #FFF; }
+      background-color: #fdf3ea; }
     .button--white:active {
-      background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 116, 34, 0.3)), to(rgba(255, 116, 34, 0.3))), #FFF;
-      background: linear-gradient(0deg, rgba(255, 116, 34, 0.3) 0%, rgba(255, 116, 34, 0.3) 100%), #FFF; }
+      background-color: #f9d8bf; }
   .button--gray {
     padding: 12px 21px;
     background-color: rgba(255, 255, 255, 0.1);
     font-size: 16px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8); }
+    .button--gray:hover, .button--gray:focus {
+      background-color: #bf662a;
+      border-color: #bf662a;
+      color: #fff; }
+    .button--gray:active {
+      background-color: #8f4c1f;
+      border-color: #8f4c1f;
+      color: #fff; }
   .button__icon {
     margin-left: 8px; }
     .button--outline-orange .button__icon {
