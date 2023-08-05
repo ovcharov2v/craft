@@ -80,4 +80,26 @@
 		width: 100%;
 		max-width: 398px;
 	}
+
+	&__age-alert {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		max-width: 383px;
+		margin: 0 auto 24px;
+		padding: 4px 8px;
+		border-radius: 8px;
+		background-color: rgba($color-white, .1);
+	}
+	&__age-alert-icon {
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+		margin-right: 12px;
+	}
+	&__age-alert-text {
+		font-size: 18px;
+		line-height: 20px;
+		text-align: left;
+	}
 }

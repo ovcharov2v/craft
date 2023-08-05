@@ -9,7 +9,6 @@
 	box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.50), 0px -30px 30px 0px rgba(0, 0, 0, 0.30) inset;
 	text-align: center;
 
-
 	@for $i from 1 through 6 {
 		&--bg#{$i} {
 			background: url("../images/instant-card-bg#{$i}.png"), radial-gradient(100.00% 100.00% at 49.91% -0.00%, rgba(255, 116, 34, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%);
@@ -39,6 +38,12 @@
 		background-image: url("../images/hops-leafs2.svg");
 	}
 
+	&--disabled {
+		border-color: #3C3C3C;
+		background: rgba(0, 0, 0, 0.60);
+		opacity: .5;
+	}
+
 	&__img-box {
 		position: relative;
 		padding-top: 100%;
@@ -52,6 +57,11 @@
 		max-width: 100%;
 		max-height: 100%;
 		filter: drop-shadow(0 0 35px rgba($color-orange, .5));
+		transition: filter $transition-default;
+
+		.instant-card--disabled & {
+			filter: grayscale(1);
+		}
 	}
 
 	&__text {
@@ -62,5 +72,20 @@
 		min-height: 56px;
 		font-size: 24px;
 		line-height: 28px;
+	}
+
+	&__counter {
+		position: absolute;
+		top: -4px;
+		right: -5px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 24px;
+		padding: 6px;
+		background-color: #515151;
+		border-radius: 50px;
+		font-size: 12px;
+		line-height: 1;
 	}
 }

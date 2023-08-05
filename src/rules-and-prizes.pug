@@ -33,7 +33,7 @@ block content
 				figure.section-steps__elem.step
 					+picture("steps-img1")(class="step__img")
 					figcaption
-						p.step__text Покупайте продукцию Крафт со знаком «Вкус путешествия с «Крафт»»
+						p.step__text Покупайте продукцию Крафт со знаком «Вкус путешествия с «Крафт»
 				+svg("steps-arrow")(class="section-steps__arrow")
 				// Elem
 				figure.section-steps__elem.step
@@ -41,7 +41,7 @@ block content
 					figcaption
 						p.step__text Регистрируйте
 							br
-							|коды из под крышек, получайте баллы и стикеры
+							|коды из-под крышек, получайте баллы и стикеры
 				+svg("steps-arrow")(class="section-steps__arrow")
 				// Elem
 				figure.section-steps__elem.step
@@ -67,22 +67,22 @@ block content
 						// Slide
 						figure.instant-prize.swiper-slide
 							.instant-prize__img-box
-								+picture("prize-instant-img1")(class="instant-prize__img")
+								+picture("instant-card-img1")(class="instant-prize__img")
 							figcaption.instant-prize__text Майка
 						// Slide
 						figure.instant-prize.swiper-slide
 							.instant-prize__img-box
-								+picture("prize-instant-img2")(class="instant-prize__img")
+								+picture("instant-card-img2")(class="instant-prize__img")
 							figcaption.instant-prize__text Худи
 						// Slide
 						figure.instant-prize.swiper-slide
 							.instant-prize__img-box
-								+picture("prize-instant-img3")(class="instant-prize__img")
+								+picture("instant-card-img3")(class="instant-prize__img")
 							figcaption.instant-prize__text Открывашка
 						// Slide
 						figure.instant-prize.swiper-slide
 							.instant-prize__img-box
-								+picture("prize-instant-img4")(class="instant-prize__img")
+								+picture("instant-card-img4")(class="instant-prize__img")
 							figcaption.instant-prize__text Бутылка
 								br
 								| крафтового
@@ -90,14 +90,19 @@ block content
 								| пива
 						// Slide
 						figure.instant-prize.swiper-slide
-							+picture("prize-instant-img3")(class="instant-prize__img")
-							figcaption.instant-prize__text Открывашка
+							.instant-prize__img-box
+								+picture("instant-card-img5")(class="instant-prize__img")
+							figcaption.instant-prize__text Шопер
 						// Slide
 						figure.instant-prize.swiper-slide
-							+picture("prize-instant-img4")(class="instant-prize__img")
-							figcaption.instant-prize__text Бутылка
-								br
-								| пива
+							.instant-prize__img-box
+								+picture("instant-card-img6")(class="instant-prize__img")
+							figcaption.instant-prize__text Термос*
+						// Slide
+						figure.instant-prize.swiper-slide
+							.instant-prize__img-box
+								+picture("instant-card-img7")(class="instant-prize__img")
+							figcaption.instant-prize__text Волейбольный мяч*
 				.section-instant__slider-nav
 					button.section-instant__slider-btn.section-instant__slider-btn--prev
 						+svg("slider-arrow")(class="section-instant__slider-btn-icon")
@@ -112,7 +117,7 @@ block content
 			.section-prizes__grid
 				// Prize
 				article.prize
-					p.prize__label.prize__label--light Ежедневный розыгрыш
+					p.prize__label.prize__label--light Розыгрыш каждые два дня
 					p.prize__condition Среди всех, у кого не менее 100 баллов
 					+picture("prize-img1")(class="prize__img")
 					h3.prize__title Ящик классического пива
@@ -142,29 +147,28 @@ block content
 			.section-prizes__grid
 				// Prize
 				article.prize
-					p.prize__label Еженедельный розыгрыш
+					p.prize__label Розыгрыш каждые 10 дней
 					p.prize__condition Среди всех, у кого 4 стикера
 						br
-						|"Мини пивоварня"
+						|«Мини пивоварня»
 					+picture("prize-img4")(class="prize__img")
 					h3.prize__title 30 литров пива
 					p.prize__players Сейчас участвует: 1020 человек
 				// Prize
 				article.prize
-					p.prize__label Еженедельный розыгрыш
+					p.prize__label Розыгрыш каждые 10 дней
 					p.prize__condition Среди всех, у кого 4 стикера
 						br
-						|"Варочный цех"
+						|«Варочный цех»
 					+picture("prize-img1")(class="prize__img")
 					h3.prize__title 45 литров пива
 					p.prize__players Сейчас участвует: 1020 человек
 				// Prize
 				article.prize
-					p.prize__label
-						|Еженедельный розыгрыш
+					p.prize__label Розыгрыш каждые 10 дней
 					p.prize__condition Среди всех, у кого 4 стикера
 						br
-						|"Цех розлива пива"
+						|«Цех розлива пива»
 					+picture("prize-img5")(class="prize__img")
 					h3.prize__title 60 литров пива
 					p.prize__players Сейчас участвует: 1020 человек
