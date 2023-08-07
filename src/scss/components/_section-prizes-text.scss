@@ -1,17 +1,33 @@
 .section-prizes-text {
-	padding-top: 64px;
-	padding-bottom: 32px;
+	padding-top: 16px;
+	padding-bottom: 16px;
 	text-align: center;
+
+	@include desktop {
+		padding-top: 64px;
+		padding-bottom: 32px;
+	}
 
 	&__title {
 		margin-bottom: 8px;
 		font-family: $font-secondary;
-		font-size: 64px;
-		line-height: 77px;
+		font-size: 32px;
+		line-height: 38px;
+
+		@include desktop {
+			margin-bottom: 8px;
+			font-size: 64px;
+			line-height: 77px;
+		}
 	}
 
 	&__text {
-		font-size: 28px;
-		line-height: 32px;
+		font-size: 20px;
+		line-height: 24px;
+
+		@include desktop {
+			font-size: 28px;
+			line-height: 32px;
+		}
 	}
 }

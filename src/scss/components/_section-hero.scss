@@ -3,46 +3,88 @@
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
-	padding-top: 148px;
-	padding-bottom: 232px;
+	padding-top: 104px;
+	padding-bottom: 100px;
+	text-align: center;
+
+	@include desktop {
+		padding-top: 148px;
+		padding-bottom: 232px;
+		text-align: left;
+	}
 
 	&__container {
-		display: grid;
-		grid-template: auto / 1.15fr 1fr;
-		grid-column-gap: 30px;
+		display: flex;
+		flex-direction: column-reverse;
+
+		@include desktop {
+			display: grid;
+			grid-template: auto / 1.15fr 1fr;
+			grid-column-gap: 30px;
+		}
 	}
 
 	&__text-box {
 	}
 
 	&__title {
-		margin-bottom: 24px;
+		margin-bottom: 14px;
 		font-family: $font-secondary;
-		font-size: 90px;
-		line-height: 90px;
+		font-size: 50px;
+		line-height: 60px;
 		letter-spacing: .1em;
 		text-transform: uppercase;
+
+		@include desktop {
+			margin-bottom: 24px;
+			font-size: 90px;
+			line-height: 90px;
+		}
 	}
 
 	&__text {
-		margin-bottom: 32px;
-		font-size: 28px;
-		line-height: 40px;
+		max-width: 315px;
+		margin: 0 auto 32px;
+		font-size: 20px;
+		line-height: 23px;
+
+		@include desktop {
+			max-width: unset;
+			margin: 0 0 32px;
+			font-size: 28px;
+			line-height: 40px;
+		}
 	}
 
 	&__button {
 		width: 100%;
-		max-width: 398px;
-		margin-bottom: 24px;
+		margin-bottom: 10px;
+
+		@include desktop {
+			max-width: 398px;
+			margin-bottom: 24px;
+		}
 	}
 
 	&__period {
-		font-size: 20px;
+		font-size: 16px;
 		opacity: .4;
+
+		@include desktop {
+			font-size: 20px;
+		}
 	}
 
 	&__img-box {
 		position: relative;
+		max-width: 250px;
+		margin: 0 auto;
+		transform: translateX(-6px);
+
+		@include desktop {
+			max-width: unset;
+			transform: none;
+		}
 	}
 
 	&__img {
@@ -53,16 +95,24 @@
 
 	&__waves {
 		position: absolute;
-		top: 13%;
+		top: 0%;
 		right: -7%;
 		max-width: 31%;
+
+		@include desktop {
+			top: 13%;
+		}
 	}
 
 	&__dashes {
 		position: absolute;
-		bottom: 8.7%;
+		bottom: -4.3%;
 		left: -1%;
 		max-width: 37%;
 		color: $color-orange;
+
+		@include desktop {
+			bottom: 8.7%;
+		}
 	}
 }

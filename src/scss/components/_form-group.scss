@@ -5,10 +5,18 @@
 
 	&__label {
 		display: block;
-		margin-bottom: 12px;
-		font-size: 18px;
-		line-height: 21px;
+		margin-bottom: 8px;
+		font-size: 16px;
+		line-height: 18px;
 		color: rgba($color-white, .5);
+		text-align: center;
+
+		@include desktop {
+			margin-bottom: 12px;
+			font-size: 18px;
+			line-height: 21px;
+			text-align: left;
+		}
 
 		&--small {
 			font-size: 16px;
@@ -21,15 +29,27 @@
 	}
 
 	&__row {
+		@include desktop {
+			display: grid;
+			grid-template: auto / repeat(2, 1fr);
+			grid-column-gap: 24px;
+		}
+	}
+
+	&__option-row {
 		display: grid;
 		grid-template: auto / repeat(2, 1fr);
-		grid-column-gap: 24px;
+		grid-column-gap: 8px;
+
+		@include desktop {
+			grid-column-gap: 24px;
+		}
 	}
 
 	&__input {
 		display: block;
 		width: 100%;
-		padding: 16px 24px;
+		padding: 14px 24px;
 		border: 1px solid rgba($color-white, .5);
 		border-radius: 32px;
 		background-color: $color-transparent;
@@ -37,6 +57,10 @@
 		line-height: 21px;
 		color: $color-white;
 		transition: border-color $transition-default;
+
+		@include desktop {
+			padding: 16px 24px;
+		}
 
 		&:hover {
 			border: 1px solid rgba($color-white, .8);
@@ -65,6 +89,21 @@
 
 		.form-group--error & {
 			display: block;
+		}
+	}
+
+	&__confirm-btn {
+		width: 100%;
+		margin-top: 8px;
+
+		@include desktop {
+			width: auto;
+			margin-top: 0;
+		}
+	}
+
+	&__option {
+		&:first-child {
 		}
 	}
 }

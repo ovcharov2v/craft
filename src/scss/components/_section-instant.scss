@@ -1,29 +1,57 @@
 .section-instant {
-	padding-top: 32px;
+	padding-top: 16px;
 	padding-bottom: 10px;
 
+	@include desktop {
+		padding-top: 32px;
+		padding-bottom: 10px;
+	}
+
 	&--lk {
-		padding-top: 53px;
+		padding-top: 42px;
 		padding-bottom: 40px;
+
+		@include desktop {
+			padding-top: 53px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__content-box {
-		padding: 32px 32px 6px;
+		padding: 16px 16px 0;
 		border-radius: 32px;
-		background: rgba(255, 116, 34, 0.05);
+		background: rgba($color-orange, 0.05);
+
+		@include desktop {
+			padding: 32px 32px 6px;
+		}
 	}
 
 	&__title {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 26px;
+		margin-bottom: 16px;
 		font-family: $font-secondary;
-		font-size: 40px;
-		line-height: 48px;
+		font-size: 24px;
+		line-height: 29px;
+
+		@include desktop {
+			margin-bottom: 26px;
+			font-size: 40px;
+			line-height: 48px;
+		}
 
 		.section-instant--lk & {
-			margin-bottom: 16px;
+			margin-bottom: 12px;
+			font-size: 32px;
+			line-height: 38px;
+
+			@include desktop {
+				margin-bottom: 16px;
+				font-size: 40px;
+				line-height: 48px;
+			}
 		}
 	}
 
@@ -38,11 +66,30 @@
 		font-size: 28px;
 		line-height: 32px;
 		text-align: center;
+
+		.section-instant--lk & {
+			@include mobile-tablet {
+				margin-bottom: 32px;
+				font-size: 20px;
+				line-height: 23px;
+			}
+		}
 	}
 
 	&__slider {
 		position: relative;
-		padding: 0 56px;
+
+		@include desktop {
+			padding: 0 56px;
+		}
+	}
+
+	&__slider-elem {
+		overflow: visible;
+
+		@include desktop {
+			overflow: hidden;
+		}
 	}
 
 	&__slider-nav {
@@ -50,10 +97,14 @@
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%) translateY(12px);
-		display: flex;
+		display: none;
 		justify-content: space-between;
 		width: 100%;
 		pointer-events: none;
+
+		@include desktop {
+			display: flex;
+		}
 	}
 
 	&__slider-btn {
@@ -85,6 +136,14 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		margin: 0 -12px;
+
+		.section-instant--lk & {
+			@include mobile-tablet {
+				flex-wrap: nowrap;
+				justify-content: unset;
+				margin: 0;
+			}
+		}
 	}
 
 	&__grid-col {
@@ -93,7 +152,15 @@
 		flex-direction: column;
 		width: 100%;
 		max-width: 25%;
+		height: auto;
 		margin-bottom: 24px;
 		padding: 0 12px;
+
+		.section-instant--lk & {
+			@include mobile-tablet {
+				padding: 0;
+				max-width: unset;
+			}
+		}
 	}
 }

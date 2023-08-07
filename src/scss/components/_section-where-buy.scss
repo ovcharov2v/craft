@@ -1,37 +1,84 @@
 .section-where-buy {
 	@include gradient-bg;
-	padding-top: 106px;
-	padding-bottom: 90px;
+	padding-top: 82px;
+	padding-bottom: 70px;
+
+	@include desktop {
+		padding-top: 106px;
+		padding-bottom: 90px;
+	}
 
 	&__title {
-		margin-bottom: 48px;
+		margin-bottom: 24px;
 		font-family: $font-secondary;
-		font-size: 48px;
-		line-height: 58px;
+		font-size: 32px;
+		line-height: 38px;
 		text-align: center;
+
+		@include desktop {
+			margin-bottom: 48px;
+			font-size: 48px;
+			line-height: 58px;
+		}
 	}
 
 	&__content {
-		display: grid;
-		grid-template: auto / 1fr 2.54fr;
-		grid-column-gap: 48px;
+		display: flex;
+		flex-direction: column-reverse;
+
+		@include desktop {
+			display: grid;
+			grid-template: auto / 1fr 2.54fr;
+			grid-column-gap: 48px;
+		}
 	}
 
 	&__button-col {
+		display: flex;
+		align-items: center;
+		margin: 0 -16px;
+		padding: 0 6px 10px;
+		overflow-x: auto;
+
+		@include desktop {
+			display: block;
+			margin: 0;
+			padding-bottom: 0;
+			overflow-x: unset;
+		}
+	}
+
+	&__dropdown {
+		flex-shrink: 0;
+		min-width: 240px;
+		margin: 0 6px;
+
+		@include desktop {
+			min-width: unset;
+			margin: 0;
+		}
 	}
 
 	&__button {
+		flex-shrink: 0;
+		min-width: 240px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 16px;
+		margin: 0 6px;
 		padding: 11px 24px;
 		background-color: rgba($color-white, .05);
 		border: 1px solid $color-transparent;
 		border-radius: 70px;
 		cursor: pointer;
 
+		@include desktop {
+			min-width: unset;
+			margin: 16px 0 0;
+		}
+
 		&--orange {
+			order: -1;
 			border-color: $color-orange;
 		}
 	}
@@ -74,6 +121,11 @@
 	}
 
 	&__map-col {
+		margin-bottom: 17px;
+
+		@include desktop {
+			margin-bottom: 0;
+		}
 	}
 
 	&__map {

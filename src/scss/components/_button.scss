@@ -15,7 +15,7 @@
 		padding: 21px 24px;
 		background-color: $color-orange;
 		border-color: $color-orange;
-		font-size: 24px;
+		font-size: 20px;
 		color: $color-white;
 		box-shadow: 0 15px 40px rgba($color-orange, .3);
 
@@ -34,6 +34,10 @@
 			box-shadow: none;
 		}
 
+		@include desktop {
+			font-size: 24px;
+		}
+
 		&-md {
 			padding: 16px 28px;
 			font-size: 20px;
@@ -41,8 +45,12 @@
 		}
 
 		&-sm {
-			padding: 14px 24px;
+			padding: 13px 24px;
 			font-size: 18px;
+
+			@include desktop {
+				padding: 14px 24px;
+			}
 		}
 
 		&-xs {
@@ -109,6 +117,12 @@
 		}
 	}
 
+	&--icon-only {
+		width: 40px;
+		height: 40px;
+		padding: 0;
+	}
+
 	&__icon {
 		margin-left: 8px;
 
@@ -120,6 +134,12 @@
 		.button--gray & {
 			width: 20px;
 			height: 20px;
+		}
+
+		.button--icon-only & {
+			width: 16px;
+			height: 16px;
+			margin-left: 0;
 		}
 	}
 }

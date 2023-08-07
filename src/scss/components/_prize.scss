@@ -7,7 +7,6 @@
 	border-radius: 32px;
 	border: 1px solid rgba($color-white, .05);
 	background: radial-gradient(100.00% 100.00% at 49.91% -0.00%, rgba(255, 116, 34, 0.12) 0%, rgba(0, 0, 0, 0.00) 100%), rgba(0, 0, 0, 0.20);
-	backdrop-filter: blur(15px);
 
 
 	&--main {
@@ -31,10 +30,15 @@
 		margin-bottom: 8px;
 		padding: 4px 12px;
 		border-radius: 50px;
-		font-size: 18px;
-		line-height: 21px;
+		font-size: 16px;
+		line-height: 18px;
 		font-weight: 700;
 		background: rgba(255, 116, 34, 0.15);
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 21px;
+		}
 
 		&--light {
 			background: rgba(251, 236, 129, 0.15);
@@ -49,10 +53,16 @@
 
 	&__condition {
 		margin-bottom: 28px;
-		font-size: 18px;
-		line-height: 21px;
+		font-size: 16px;
+		line-height: 18px;
 		color: rgba($color-white, .7);
 		text-align: center;
+
+		@include desktop {
+			margin-bottom: 28px;
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 
 	&__img {
@@ -61,14 +71,24 @@
 	}
 
 	&__title {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 20px;
+		line-height: 23px;
 		font-weight: 700;
+
+		@include desktop {
+			font-size: 24px;
+			line-height: 28px;
+		}
 	}
 
 	&__players {
-		font-size: 18px;
-		line-height: 21px;
+		font-size: 16px;
+		line-height: 18px;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 
 	&__status {

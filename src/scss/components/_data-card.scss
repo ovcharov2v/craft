@@ -1,11 +1,15 @@
 .data-card {
 	display: flex;
 	flex-direction: column;
-	padding: 24px;
+	padding: 16px;
 	border-radius: 32px;
 	border: 1px solid rgba($color-white, .05);
 	background: rgba(#000, .20);
 	backdrop-filter: blur(15px);
+
+	@include desktop {
+		padding: 24px;
+	}
 
 	&__title-box {
 		display: flex;
@@ -18,9 +22,28 @@
 	}
 
 	&__title {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 20px;
+		line-height: 23px;
 		font-weight: 700;
+
+		@include desktop {
+			font-size: 24px;
+			line-height: 28px;
+		}
+	}
+
+	&__desktop-btn {
+		display: none;
+
+		@include desktop {
+			display: inline-flex;
+		}
+	}
+
+	&__mobile-btn {
+		@include desktop {
+			display: none;
+		}
 	}
 
 	&__row {
@@ -29,7 +52,11 @@
 		align-items: flex-end;
 
 		&:not(:last-child) {
-			margin-bottom: 16px;
+			margin-bottom: 12px;
+
+			@include desktop {
+				margin-bottom: 16px;
+			}
 		}
 	}
 
@@ -38,25 +65,45 @@
 
 	&__time {
 		display: block;
-		font-size: 12px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 12px;
 		color: rgba($color-white, .4);
+
+		@include desktop {
+			font-size: 12px;
+			line-height: 14px;
+		}
 	}
 
 	&__text {
-		font-size: 16px;
-		line-height: 18px;
+		font-size: 18px;
+		line-height: 21px;
+
+		@include desktop {
+			font-size: 16px;
+			line-height: 18px;
+		}
 	}
 
 	&__code {
-		font-size: 16px;
-		line-height: 18px;
+		font-size: 14px;
+		line-height: 16px;
+
+		@include desktop {
+			font-size: 16px;
+			line-height: 18px;
+		}
 	}
 
 	&__status {
-		font-size: 20px;
-		line-height: 23px;
+		font-size: 16px;
+		line-height: 18px;
 		color: #7B7B7B;
+
+		@include desktop {
+			font-size: 20px;
+			line-height: 23px;
+		}
 
 		&--green {
 			color: #40FD48;
@@ -65,23 +112,38 @@
 
 	&__name {
 		margin-bottom: 4px;
-		font-size: 20px;
-		line-height: 23px;
+		font-size: 18px;
+		line-height: 21px;
+
+		@include desktop {
+			font-size: 20px;
+			line-height: 23px;
+		}
 	}
 
 	&__birthday {
 		margin-bottom: 16px;
-		font-size: 16px;
-		line-height: 18px;
+		font-size: 14px;
+		line-height: 16px;
 		color: rgba($color-white, .4);
+
+		@include desktop {
+			font-size: 16px;
+			line-height: 18px;
+		}
 	}
 
 	&__contacts {
 		display: flex;
 		align-items: center;
 		margin-bottom: 16px;
-		font-size: 18px;
-		line-height: 21px;
+		font-size: 16px;
+		line-height: 18px;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 
 	&__contacts-icon {
@@ -91,29 +153,48 @@
 	}
 
 	&__info-box {
-		margin-bottom: 16px;
+		margin-bottom: 12px;
 		padding: 12px;
 		border-radius: 12px;
 		background: rgba(255, 116, 34, 0.05);
+
+		@include desktop {
+			margin-bottom: 16px;
+		}
 	}
 
 	&__info-text-big {
 		margin-bottom: 6px;
-		font-size: 16px;
-		line-height: 18px;
+		font-size: 14px;
+		line-height: 16px;
+
+		@include desktop {
+			font-size: 16px;
+			line-height: 18px;
+		}
 	}
 
 	&__info-text {
 		margin-bottom: 2px;
-		font-size: 14px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 12px;
 		color: rgba($color-white, .6);
+
+		@include desktop {
+			font-size: 14px;
+			line-height: 14px;
+		}
 	}
 
 	&__info-text-small {
-		font-size: 12px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 12px;
 		color: rgba($color-white, .6);
+
+		@include desktop {
+			font-size: 12px;
+			line-height: 14px;
+		}
 	}
 
 	&__score-row {
@@ -129,17 +210,27 @@
 		padding: 12px;
 		border-radius: 50px;
 		background: rgba(255, 255, 255, 0.05);
-		font-size: 14px;
-		line-height: 16px;
+		font-size: 12px;
+		line-height: 14px;
 		text-transform: uppercase;
+
+		@include desktop {
+			font-size: 14px;
+			line-height: 16px;
+		}
 	}
 
 	&__score-value {
 		margin-right: 8px;
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 20px;
+		line-height: 24px;
 		font-weight: 700;
-		color: $color-orange
+		color: $color-orange;
+
+		@include desktop {
+			font-size: 24px;
+			line-height: 28px;
+		}
 	}
 
 	&__button-box {
@@ -148,6 +239,9 @@
 
 	&__refresh-button {
 		width: 100%;
-		max-width: 135px;
+
+		@include desktop {
+			max-width: 135px;
+		}
 	}
 }

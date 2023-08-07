@@ -10,52 +10,86 @@
 
 	&__logo {
 		display: inline-block;
-		margin-bottom: 38px;
+		max-width: 230px;
+		margin-bottom: 48px;
+
+		@include desktop {
+			max-width: 100%;
+			margin-bottom: 38px;
+		}
 	}
 
 	&__text-box {
-		margin-bottom: 92px;
+		margin-bottom: 48px;
+
+		@include desktop {
+			margin-bottom: 92px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 10px;
 		font-family: $font-secondary;
-		font-size: 80px;
+		font-size: 40px;
 		text-transform: uppercase;
+
+		@include desktop {
+			font-size: 80px;
+		}
 	}
 
 	&__text {
-		font-size: 32px;
+		font-size: 24px;
+
+		@include desktop {
+			font-size: 32px;
+		}
 	}
 
 	&__form {
 	}
 
 	&__form-text {
-		margin-bottom: 10px;
-		font-size: 24px;
+		max-width: 250px;
+		margin: 0 auto 10px;
+		font-size: 20px;
+
+		@include desktop {
+			max-width: unset;
+			font-size: 24px;
+		}
 	}
 
 	&__form-grid {
 		display: grid;
 		grid-template: auto / 1fr 1fr 1.33fr;
-		grid-column-gap: 24px;
+		grid-column-gap: 8px;
 		width: 100%;
 		max-width: 448px;
-		margin: 0 auto 98px;
+		margin: 0 auto 48px;
+
+		@include desktop {
+			grid-column-gap: 24px;
+			margin-bottom: 98px;
+		}
 	}
 
 	&__form-input {
 		min-width: 0;
-		padding: 22px;
+		padding: 16px;
 		background-color: rgba($color-white, .05);
 		border: 1px solid rgba($color-white, .1);
 		border-radius: 12px;
-		font-size: 48px;
+		font-size: 24px;
 		line-height: 1;
 		text-align: center;
 		color: $color-white;
 		transition: border-color $transition-default;
+
+		@include desktop {
+			padding: 22px;
+			font-size: 48px;
+		}
 
 		&::placeholder {
 			opacity: 1;
@@ -87,19 +121,34 @@
 		width: 100%;
 		max-width: 383px;
 		margin: 0 auto 24px;
-		padding: 4px 8px;
+		padding: 8px;
 		border-radius: 8px;
 		background-color: rgba($color-white, .1);
+
+		@include desktop {
+			padding: 4px 8px;
+		}
 	}
+
 	&__age-alert-icon {
 		flex-shrink: 0;
 		width: 32px;
 		height: 32px;
-		margin-right: 12px;
+		margin-right: 8px;
+
+		@include desktop {
+			margin-right: 12px;
+		}
 	}
+
 	&__age-alert-text {
-		font-size: 18px;
-		line-height: 20px;
+		font-size: 14px;
+		line-height: 16px;
 		text-align: left;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 20px;
+		}
 	}
 }

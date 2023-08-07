@@ -1,16 +1,42 @@
 .step {
-	text-align: center;
+	display: flex;
+	align-items: center;
+
+	@include desktop {
+		display: block;
+		text-align: center;
+	}
 
 	&__img {
-		display: block;
-		width: 100%;
-		margin-bottom: 24px;
+		flex-shrink: 0;
+		display: flex;
+		width: 100px;
+		margin-right: 16px;
+
+		.step:nth-child(1) & {
+			transform: translateX(8px);
+
+			@include desktop {
+				transform: none;
+			}
+		}
+
+		@include desktop {
+			display: block;
+			width: 100%;
+			margin-bottom: 24px;
+			margin-right: 0;
+		}
 	}
 
 	&__text {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 18px;
+		line-height: 21px;
 		color: rgba($color-white, .9);
 		text-transform: uppercase;
+
+		@include desktop {
+			font-size: 24px;
+			line-height: 28px;}
 	}
 }

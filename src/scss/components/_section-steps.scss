@@ -1,13 +1,20 @@
 .section-steps {
 	max-width: 1060px;
-	margin-top: -156px;
 	padding-bottom: 18px;
+
+	@include desktop {
+		margin-top: -156px;
+	}
 
 	&__grid {
 		display: grid;
-		grid-template: auto / minmax(0, 1fr) 40px minmax(0, 1.1fr) 40px minmax(0, 1fr);
-		grid-column-gap: 24px;
-		margin-bottom: 24px;
+		margin-bottom: 16px;
+
+		@include desktop {
+			grid-template: auto / minmax(0, 1fr) 40px minmax(0, 1.1fr) 40px minmax(0, 1fr);
+			grid-column-gap: 24px;
+			margin-bottom: 24px;
+		}
 	}
 
 	&__elem {
@@ -15,12 +22,25 @@
 	}
 
 	&__arrow {
+		display: none;
 		width: 40px;
 		height: 25px;
 		margin: auto 0 10px;
+
+		@include desktop {
+			display: block;
+		}
 	}
 
 	&__button-box {
 		text-align: center;
+	}
+
+	&__button {
+		width: 100%;
+
+		@include desktop {
+			width: unset;
+		}
 	}
 }

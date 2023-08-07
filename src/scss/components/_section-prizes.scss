@@ -3,37 +3,64 @@
 	padding-bottom: 24px;
 
 	&--score {
-		padding-top: 12px;
-		padding-bottom: 32px;
+		padding-top: 8px;
+		padding-bottom: 16px;
+
+		@include desktop {
+			padding-top: 12px;
+			padding-bottom: 32px;
+		}
 	}
 
 	&--sticker {
-		padding-top: 32px;
+		padding-top: 16px;
 		padding-bottom: 66px;
+
+		@include desktop {
+			padding-top: 32px;
+			padding-bottom: 66px;
+		}
 	}
 
 	&--lk {
-		padding-top: 80px;
-		padding-bottom: 60px;
+		padding-top: 28px;
+		padding-bottom: 40px;
+
+		@include desktop {
+			padding-top: 80px;
+			padding-bottom: 60px;
+		}
 	}
 
 	&__title {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-bottom: 30px;
+		margin-bottom: 16px;
 		font-family: $font-secondary;
-		font-size: 40px;
-		line-height: 48px;
+		font-size: 24px;
+		line-height: 29px;
 		font-weight: 700;
+
+		@include desktop {
+			margin-bottom: 30px;
+			font-size: 40px;
+			line-height: 48px;
+		}
 
 		.section-prizes--lk & {
 			display: flex;
 			align-items: center;
-			margin-bottom: 24px;
-			font-size: 48px;
-			line-height: 58px;
+			margin-bottom: 30px;
+			font-size: 32px;
+			line-height: 38px;
 			font-weight: 400;
+
+			@include desktop {
+				margin-bottom: 24px;
+				font-size: 48px;
+				line-height: 58px;
+			}
 		}
 	}
 
@@ -45,13 +72,22 @@
 
 	&__title-number {
 		margin: 0 24px;
-		font-size: 96px;
-		line-height: 115px;
+		font-size: 42px;
+		line-height: 48px;
+
+		@include desktop {
+			margin: 0 24px;
+			font-size: 96px;
+			line-height: 115px;
+		}
 	}
 
 	&__grid {
 		display: grid;
-		grid-template: auto / repeat(3, 1fr);
-		grid-column-gap: 24px;
+		grid-gap: 32px 24px;
+
+		@include desktop {
+			grid-template: auto / repeat(3, 1fr);
+		}
 	}
 }

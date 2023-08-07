@@ -10,7 +10,7 @@ append vars
 
 block content
 	section.section-login
-		div(style="display:flex;flex-direction:column;align-self:center;width:100%;max-width:400px;")
+		div(style="display:flex;flex-direction:column;align-self:center;width:100%;max-width:300px;")
 			button.button.button--orange.button--orange-sm(data-modal="login1") Вход в личный кабинет (Экран 1)
 			br
 			button.button.button--orange.button--orange-sm(data-modal="login2") Вход в личный кабинет (Экран 2)
@@ -88,7 +88,7 @@ block content
 					+picture("modal-img1", "jpg")(class="modal__img")
 				.modal__content-box
 					.modal__title-box
-						h2.modal__title Вход в личный кабинет
+						h2.modal__title.show-desktop Вход в личный кабинет
 						button.modal__close.js-modal-close
 							+svg("close")(class="modal__close-icon")
 					.modal__success-box
@@ -163,12 +163,12 @@ block content
 								label.form-group__label Телефон
 								.form-group__row
 									input.form-group__input(type="tel", name="phone", value="+7")
-									button.button.button--white Подтвердить
+									button.button.button--white.form-group__confirm-btn Подтвердить
 							.form-group
 								label.form-group__label.form-group__label--small Введите код из SMS, который мы отправили 5 секунд назад
 								.form-group__row
 									input.form-group__input(type="text", name="code", placeholder="Код")
-									button.button.button--white Отправить
+									button.button.button--white.form-group__confirm-btn Отправить
 							p.modal__hint Если код не пришёл, запросите
 								|
 								|
@@ -211,15 +211,16 @@ block content
 						button.modal__close.js-modal-close
 							+svg("close")(class="modal__close-icon")
 					.modal__wrap
-						.form-group
+						.form-group.form-group--error
 							label.form-group__label Имя
 							input.form-group__input(type="text", name="first-name", placeholder="Введите имя")
+							span.form-group__error-text Текст ошибки
 						.form-group
 							label.form-group__label Фамилия
 							input.form-group__input(type="text", name="first-name", placeholder="Введите фамилию")
 						.form-group
 							p.form-group__label Пол
-							.form-group__row
+							.form-group__option-row
 								label.option
 									input.option__input(type="radio", name="gender")
 									p.option__text
@@ -250,12 +251,12 @@ block content
 								label.form-group__label Телефон
 								.form-group__row
 									input.form-group__input(type="tel", name="phone", value="+7")
-									button.button.button--white Подтвердить
+									button.button.button--white.form-group__confirm-btn Подтвердить
 							.form-group
 								label.form-group__label.form-group__label--small Введите код из SMS, который мы отправили 5 секунд назад
 								.form-group__row
 									input.form-group__input(type="text", name="code", placeholder="Код")
-									button.button.button--white Отправить
+									button.button.button--white.form-group__confirm-btn Отправить
 							p.modal__hint Если код не пришёл, запросите
 								|
 								|
@@ -279,7 +280,11 @@ block content
 					.modal__title-box
 						.modal__wrap
 							h2.modal__title Обратная связь
-							p.modal__subtitle Есть вопросы? Напишите нам, и мы ответим в ближайшее время
+							p.modal__subtitle Есть вопросы?
+								|
+								|
+								br.hide-desktop
+								|Напишите нам, и мы ответим в ближайшее время
 						button.modal__close.js-modal-close
 							+svg("close")(class="modal__close-icon")
 					.modal__wrap
@@ -340,8 +345,10 @@ block content
 							.modal__info-box
 								+svg("info")(class="modal__info-box-icon")
 								p Соберите ещё 1 стикер из коллекции «Варочный цех»
-									br
-									|для участия в розыгрыше 45 литров пива
+									|
+									|
+									br.show-desktop
+									|для участия в розыгрыше 45 литров пива
 					button.modal__close.js-modal-close
 								+svg("close")(class="modal__close-icon")
 				.modal__text-block
@@ -372,7 +379,9 @@ block content
 							.modal__info-box
 								+svg("info")(class="modal__info-box-icon")
 								p Соберите ещё 1 стикер из коллекции «Варочный цех»
-									br
+									|
+									|
+									br.show-desktop
 									|для участия в розыгрыше 45 литров пива
 					button.modal__close.js-modal-close
 								+svg("close")(class="modal__close-icon")

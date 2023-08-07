@@ -16,7 +16,7 @@ block content
 					|путешествия
 					br
 					|с «Крафт»
-				p.section-hero__text Покупайте продукцию «Крафт» и получайте призы!
+				p.section-hero__text Покупайте продукцию «Крафт» и получайте призы!
 					br
 					|Главный приз - путешествие на двоих.
 				a.button.button--orange.section-hero__button(href="#") Зарегистрировать код
@@ -40,7 +40,9 @@ block content
 					+picture("steps-img2")(class="step__img")
 					figcaption
 						p.step__text Регистрируйте
-							br
+							|
+							|
+							br.show-desktop
 							|коды из-под крышек, получайте баллы и стикеры
 				+svg("steps-arrow")(class="section-steps__arrow")
 				// Elem
@@ -54,15 +56,19 @@ block content
 		// Section Prizes text
 		section.section-prizes-text.container
 			h2.section-prizes-text__title Призы
-			p.section-prizes-text__text Чем БОЛЬШЕ КОДОВ , тем ВЫШЕ ШАНС получить призы!
+			p.section-prizes-text__text Чем БОЛЬШЕ КОДОВ ,
+				br.hide-desktop
+				|
+				|
+				|тем ВЫШЕ ШАНС получить призы!
 
 		// Section Instant
-		section.section-instant.container
+		section.section-instant.section-instant--prize-and-rules.container
 			h2.section-instant__title
 				+svg("lightning")(class="section-instant__title-icon")
 				|Мгновенные призы
 			.section-instant__slider
-				.swiper
+				.swiper.section-instant__slider-elem
 					.swiper-wrapper
 						// Slide
 						figure.instant-prize.swiper-slide

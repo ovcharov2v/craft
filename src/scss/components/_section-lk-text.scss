@@ -1,11 +1,21 @@
 .section-lk-text {
-	padding-top: 60px;
-	padding-bottom: 46px;
+	padding-top: 40px;
+	padding-bottom: 80px;
+
+	@include desktop {
+		padding-top: 60px;
+		padding-bottom: 46px;
+	}
 
 	&__text {
 		font-family: $font-secondary;
-		font-size: 48px;
-		line-height: 56px;
+		font-size: 32px;
+		line-height: 38px;
 		text-align: center;
+
+		@include desktop {
+			font-size: 48px;
+			line-height: 56px;
+		}
 	}
 }

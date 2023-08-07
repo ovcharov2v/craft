@@ -20,7 +20,7 @@
 
 	&__value {
 		width: 100%;
-		padding: 16px 50px 16px 24px;
+		padding: 14px 50px 14px 24px;
 		border: none;
 		font-size: 18px;
 		line-height: 21px;
@@ -28,6 +28,18 @@
 		background-color: $color-transparent;
 		pointer-events: none;
 		text-overflow: ellipsis;
+
+		@include desktop {
+			padding: 16px 50px 16px 24px;
+		}
+
+		.dropdown--where-to-buy {
+			padding: 20px 50px 20px 24px;
+
+			@include desktop {
+				padding: 16px 50px 16px 24px;
+			}
+		}
 
 		&::placeholder {
 			font-size: 18px;

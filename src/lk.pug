@@ -17,7 +17,10 @@ block content
 				.data-card
 					.data-card__title-box
 						h2.data-card__title Мои коды
-						button.button.button--orange.button--orange-xs Зарегистрировать код
+						button.button.button--orange.button--orange-xs.data-card__desktop-btn Зарегистрировать код
+						button.button.button--orange.button--orange-xs.button--icon-only.data-card__mobile-btn(aria-label="Add code")
+							+svg("plus")(class="button__icon")
+
 					// Row
 					.data-card__row
 						.data-card__text-box
@@ -68,7 +71,9 @@ block content
 				.data-card
 					.data-card__title-box
 						h2.data-card__title Мои данные
-						button.button.button--outline-orange Редактировать
+						button.button.button--outline-orange.data-card__desktop-btn Редактировать
+							+svg("pencil")(class="button__icon")
+						button.button.button--outline-orange.button--icon-only.data-card__mobile-btn(aria-label="Edit")
 							+svg("pencil")(class="button__icon")
 					p.data-card__name Светлана Голубева
 					p.data-card__birthday Дата рождения: 18 марта 1986
@@ -80,7 +85,9 @@ block content
 						| golubeva@gmail.com
 					.data-card__info-box
 						p.data-card__info-text-big Получите +50 баллов
-							br
+							|
+							|
+							br.show-desktop
 							|за подтверждение e-mail
 						p.data-card__info-text Получите +50 баллов за подтверждение e-mail
 						p.data-card__info-text-small Для этого необходимо перейти по ссылке из письма. Если вы не получали письмо, то
@@ -237,55 +244,56 @@ block content
 				|
 				|
 				|продукции и получите шанс выиграть мгновенные призы
-			.section-instant__grid
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--bg1
-						.instant-card__img-box
-							+picture("instant-card-img1")(class="instant-card__img")
-						figcaption.instant-card__text Майка
-							span.instant-card__counter 3
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--disabled.instant-card--bg1
-						.instant-card__img-box
-							+picture("instant-card-img2")(class="instant-card__img")
-						figcaption.instant-card__text Худи
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--bg2
-						.instant-card__img-box
-							+picture("instant-card-img3")(class="instant-card__img")
-						figcaption.instant-card__text Открывашка
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--disabled.instant-card--bg3
-						.instant-card__img-box
-							+picture("instant-card-img4")(class="instant-card__img")
-						figcaption.instant-card__text Бутылка крафтового
-							br
-							|пива
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--bg4
-						.instant-card__img-box
-							+picture("instant-card-img5")(class="instant-card__img")
-						figcaption.instant-card__text Шопер
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--bg5
-						.instant-card__img-box
-							+picture("instant-card-img6")(class="instant-card__img")
-						figcaption.instant-card__text Термос *
-							span.instant-card__counter 2
-				.section-instant__grid-col
-					// Card
-					figure.instant-card.instant-card--bg6
-						.instant-card__img-box
-							+picture("instant-card-img7")(class="instant-card__img")
-						figcaption.instant-card__text Волейбольный
-							br
-							|мяч *
+			.swiper.section-instant__slider-elem
+				.swiper-wrapper.section-instant__grid
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--bg1
+							.instant-card__img-box
+								+picture("instant-card-img1")(class="instant-card__img")
+							figcaption.instant-card__text Майка
+								span.instant-card__counter 3
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--disabled.instant-card--bg1
+							.instant-card__img-box
+								+picture("instant-card-img2")(class="instant-card__img")
+							figcaption.instant-card__text Худи
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--bg2
+							.instant-card__img-box
+								+picture("instant-card-img3")(class="instant-card__img")
+							figcaption.instant-card__text Открывашка
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--disabled.instant-card--bg3
+							.instant-card__img-box
+								+picture("instant-card-img4")(class="instant-card__img")
+							figcaption.instant-card__text Бутылка крафтового
+								br
+								|пива
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--bg4
+							.instant-card__img-box
+								+picture("instant-card-img5")(class="instant-card__img")
+							figcaption.instant-card__text Шопер
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--bg5
+							.instant-card__img-box
+								+picture("instant-card-img6")(class="instant-card__img")
+							figcaption.instant-card__text Термос *
+								span.instant-card__counter 2
+					.section-instant__grid-col.swiper-slide
+						// Card
+						figure.instant-card.instant-card--bg6
+							.instant-card__img-box
+								+picture("instant-card-img7")(class="instant-card__img")
+							figcaption.instant-card__text Волейбольный
+								br
+								|мяч *
 
 	// Section Prizes
 	section.section-prizes.section-prizes--lk.container

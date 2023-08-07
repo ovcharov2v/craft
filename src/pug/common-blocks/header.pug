@@ -1,6 +1,9 @@
 mixin header()
 	header.header(class=isHeaderBlack?"header--black":"")
 		.header__container.container
+			button.header__menu-btn(aria-label="Menu")
+				+svg("burger")(class="header__menu-btn-icon header__menu-btn-icon--burger")
+				+svg("close")(class="header__menu-btn-icon header__menu-btn-icon--close")
 			a.header__logo-link(href="./index.html")
 				img.header__logo(src="images/logo.svg", alt)
 			nav.header__nav(class=isHeaderMenuLeft?"header__nav--left":"")
@@ -13,6 +16,12 @@ mixin header()
 						a.header__nav-link(href="#") Где купить
 					li.header__nav-elem
 						a.header__nav-link(href="#") Обратная связь
+				if isUserLoggedIn
+					.header__user-nav.header__user-nav--active.header__user-nav--mobile
+						+svg("user-icon")(class="header__user-icon")
+						.header__user-nav-box
+							p.header__user-name Светлана Голубева
+							button.header__user-logout Выйти
 			.header__user-nav(class=isUserLoggedIn?"header__user-nav--active":"")
 				if isUserLoggedIn
 					.header__user-nav-box
@@ -20,5 +29,6 @@ mixin header()
 						button.header__user-logout Выйти
 					+svg("user-icon")(class="header__user-icon")
 				else
-					a.header__lk-link(href="#") Личный кабинет
+					a.header__lk-link(href="#")
+						span.header__lk-link-text Личный кабинет
 						+svg("user-icon")(class="header__user-icon")

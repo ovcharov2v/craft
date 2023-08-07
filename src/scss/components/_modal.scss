@@ -9,9 +9,12 @@
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	padding: 32px 16px;
 	transition: background-color 0.2s;
 	-webkit-overflow-scrolling: touch;
+
+	@include desktop {
+		padding: 32px 16px;
+	}
 
 	&--show { // .modal--shown
 		display: flex;
@@ -28,16 +31,21 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: calc(100% - 32px);
-		min-height: 360px;
+		width: 100%;
+		min-height: 100vh;
 		margin: auto;
 		background-color: #000;
-		border-radius: 32px;
 		transition: transform 0.3s ease-in-out, opacity 0.7s ease;
 		opacity: 0;
 		transform: perspective(600px) translateY(350px) rotateX(-45deg) scale(0.7);
 		transform-origin: 50% 0;
 		overflow: hidden;
+
+		@include desktop {
+			width: calc(100% - 32px);
+			min-height: 360px;
+			border-radius: 32px;
+		}
 
 		.modal--shown & {
 			opacity: 1;
@@ -46,51 +54,68 @@
 
 		.modal--login &,
 		.modal--code & {
-			max-width: 1000px;
+			@include desktop {
+				max-width: 1000px;
+			}
 		}
 
 		.modal--success & {
-			max-width: 1000px;
-			height: 100vh;
-			max-height: 668px;
+			@include desktop {
+				max-width: 1000px;
+				height: 100vh;
+				max-height: 668px;
+			}
 		}
 
 		.modal--slider & {
-			max-width: 909px;
-			height: 100vh;
-			max-height: 909px;
+			@include desktop {
+				max-width: 909px;
+				height: 100vh;
+				max-height: 909px;
+			}
 		}
 
 		.modal--register &,
 		.modal--user & {
-			max-width: 654px;
+			@include desktop {
+				max-width: 654px;
+			}
 		}
 
 		.modal--feedback & {
-			max-width: 563px;
+			@include desktop {
+				max-width: 563px;
+			}
 		}
 
 		.modal--sticker & {
-			max-width: 909px;
+			@include desktop {
+				max-width: 909px;
+			}
 		}
 	}
 
 	&__close {
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 20px;
+		right: 18px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 30px;
 		height: 30px;
-		margin-top: 4px;
 		padding: 0;
 		border-width: 0;
 		background-color: $color-transparent;
 		cursor: pointer;
 		color: #464646;
 		transition: color $transition-default;
+
+		@include desktop {
+			top: 0;
+			right: 0;
+			margin-top: 4px;
+		}
 
 		&:hover {
 			color: $color-orange;
@@ -107,9 +132,17 @@
 	}
 
 	&__content {
+		width: 100%;
+
+		@include desktop {
+			width: auto;
+		}
+
 		&--image-left {
-			display: grid;
-			grid-template: auto / repeat(2, 1fr);
+			@include desktop {
+				display: grid;
+				grid-template: auto / repeat(2, 1fr);
+			}
 		}
 
 		.modal--success & {
@@ -121,57 +154,122 @@
 		}
 
 		.modal--sticker & {
-			padding: 48px;
+			padding: 48px 20px 24px;
+
+			@include desktop {
+				padding: 48px;
+			}
+		}
+
+		.modal--success & {
+			max-width: 230px;
+			margin: 0 auto;
+
+			@include desktop {
+				max-width: 100%;
+			}
 		}
 	}
 
 	&__img {
+		display: none;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+
+		@include desktop {
+			display: block;
+		}
 	}
 
 	&__content-box {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 48px;
+		padding: 48px 20px 24px;
+
+		@include desktop {
+			padding: 48px;
+		}
 	}
 
 	&__title-box {
-		position: relative;
-		padding-right: 45px;
-		display: flex;
-		justify-content: space-between;
+		@include desktop {
+			position: relative;
+			padding-right: 45px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.modal--login & {
+			margin-bottom: 32px;
+
+			@include desktop {
+				margin-bottom: 0;
+			}
+		}
 
 		.modal--register &,
 		.modal--user &,
 		.modal--feedback & {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
+
+			@include desktop {
+				margin-bottom: 24px;
+			}
 		}
 	}
 
 	&__title {
 		font-family: $font-secondary;
-		font-size: 32px;
-		line-height: 38px;
+		font-size: 24px;
+		line-height: 29px;
 		text-transform: uppercase;
+		text-align: center;
+
+		@include desktop {
+			font-size: 32px;
+			line-height: 38px;
+			text-align: left;
+		}
 
 		.modal--success & {
 			margin-bottom: 16px;
 		}
 
 		.modal--sticker & {
-			font-size: 48px;
-			line-height: 58px;
+			font-size: 32px;
+			line-height: 38px;
+
+			@include desktop {
+				font-size: 48px;
+				line-height: 58px;
+			}
 		}
 	}
 
 	&__subtitle {
 		margin-top: 8px;
-		font-size: 18px;
-		line-height: 21px;
+		margin-bottom: 32px;
+		font-size: 16px;
+		line-height: 18px;
 		color: rgba($color-white, .5);
+		text-align: center;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 21px;
+			text-align: left;
+		}
+
+		.modal--register &,
+		.modal--feedback & {
+			margin-bottom: 8px;
+
+			@include desktop {
+				margin-bottom: 0;
+			}
+		}
 
 		.modal--success & {
 			margin-bottom: 48px;
@@ -202,13 +300,17 @@
 	&__button-back {
 		display: inline-flex;
 		align-items: center;
-		margin: 0 auto 16px;
+		margin: 32px auto 16px;
 		padding: 0;
 		border: none;
 		background-color: $color-transparent;
 		color: $color-white;
 		font-size: 20px;
 		line-height: 23px;
+
+		@include desktop {
+			margin-top: 0;
+		}
 	}
 
 	&__button-back-icon {
@@ -218,9 +320,16 @@
 	}
 
 	&__hint {
-		font-size: 18px;
-		line-height: 21px;
+		font-size: 16px;
+		line-height: 18px;
 		color: rgba($color-white, .5);
+		text-align: center;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 21px;
+			text-align: left;
+		}
 
 		&--yellow {
 			color: #EFDC4E;
@@ -233,9 +342,14 @@
 
 		.modal--code & {
 			margin-top: 14px;
-			font-size: 16px;
-			line-height: 18px;
+			font-size: 14px;
+			line-height: 16px;
 			letter-spacing: .02em;
+
+			@include desktop {
+				font-size: 16px;
+				line-height: 18px;
+			}
 		}
 	}
 
@@ -258,7 +372,9 @@
 		margin-bottom: 24px;
 
 		.modal--success & {
-			margin-bottom: 48px;
+			@include desktop {
+				margin-bottom: 48px;
+			}
 		}
 	}
 
@@ -275,6 +391,20 @@
 	}
 
 	&__btn {
+		width: 100%;
+
+		@include desktop {
+			width: unset;
+		}
+
+		.modal--login & {
+			margin-top: 32px;
+
+			@include desktop {
+				margin-top: 0;
+			}
+		}
+
 		.modal--code & {
 			margin-top: 60px;
 		}
@@ -303,14 +433,27 @@
 
 	&__sticker-box {
 		display: flex;
+		flex-direction: column;
+		align-items: center;
 		margin-bottom: 24px;
-		flex-grow: 1;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: unset;
+			margin-bottom: 24px;
+			flex-grow: 1;
+		}
 	}
 
 	&__sticker {
 		flex-shrink: 0;
 		width: 171px;
-		margin-right: 24px;
+		margin-bottom: 24px;
+
+		@include desktop {
+			margin-right: 24px;
+			margin-bottom: 0;
+		}
 	}
 
 	&__info-box {
@@ -318,9 +461,17 @@
 		align-items: center;
 		width: 100%;
 		margin-top: auto;
-		padding: 12px 24px;
+		padding: 12px;
 		border-radius: 50px;
 		background-color: rgba($color-white, .05);
+		font-size: 16px;
+		line-height: 18px;
+
+		@include desktop {
+			padding: 12px 24px;
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 
 	&__info-box-icon {
@@ -331,9 +482,15 @@
 	}
 
 	&__text-block {
-		margin-bottom: 48px;
-		font-size: 18px;
-		line-height: 21px;
+		margin-bottom: 24px;
+		font-size: 16px;
+		line-height: 18px;
+
+		@include desktop {
+			margin-bottom: 48px;
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 
 	&__slider {
@@ -343,17 +500,20 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		max-width: 760px;
+
 		.swiper-slide {
 			border-radius: 16px;
 			transition: transform $transition-default, filter $transition-default;
 
 		}
+
 		.swiper-slide-visible {
 			filter: blur(10px);
 		}
 
-		.swiper-slide-next{
+		.swiper-slide-next {
 			filter: blur(4px);
+
 			img {
 				transform: translateX(40px);
 			}
@@ -381,12 +541,17 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		height: 100%;
-		max-width: 60%;
-		max-height: 60%;
+		max-width: 80%;
+		max-height: 80%;
 		animation: rotate 1s linear infinite;
-		filter: blur(7px);
+		filter: blur(16px) drop-shadow( 0 0 6px $color-orange);
 		pointer-events: none;
 		user-select: none;
+
+		@include desktop {
+			max-width: 60%;
+			max-height: 60%;
+		}
 	}
 
 	&__slider-img {

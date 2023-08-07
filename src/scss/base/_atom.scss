@@ -9,3 +9,17 @@
 .mb24 {
 	margin-bottom: 24px !important;
 }
+
+.show-desktop {
+	display: none !important;
+
+	@include desktop {
+		display: block !important;
+	}
+}
+
+.hide-desktop {
+	@include desktop {
+		display: none !important;
+	}
+}

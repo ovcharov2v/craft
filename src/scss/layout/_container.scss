@@ -6,7 +6,7 @@
 	margin-left: auto;
 	margin-right: auto;
 
-	@include tablet-desktop() {
+	@include desktop() {
 		padding-left: 30px;
 		padding-right: 30px;
 	}

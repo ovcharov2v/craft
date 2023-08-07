@@ -1,30 +1,58 @@
 .section-agreement {
 	@include gradient-bg;
-	padding-top: 112px;
-	padding-bottom: 52px;
+	padding-top: 82px;
+	padding-bottom: 16px;
+
+	@include desktop {
+		padding-top: 112px;
+		padding-bottom: 52px;
+	}
 
 	&__title {
-		margin-bottom: 58px;
+		max-width: 300px;
+		margin: 0 auto 24px;
 		font-family: $font-secondary;
-		font-size: 48px;
-		line-height: 58px;
+		font-size: 32px;
+		line-height: 39px;
 		text-align: center;
+
+		@include desktop {
+			max-width: unset;
+			margin: 0 0 58px;
+			font-size: 48px;
+			line-height: 58px;
+		}
 	}
 
 	&__chapter {
-		margin-bottom: 48px;
+		margin-bottom: 24px;
+
+		@include desktop {
+			margin-bottom: 48px;
+		}
 	}
 
 	&__chapter-title {
-		margin-bottom: 24px;
+		margin-bottom: 12px;
 		font-family: $font-secondary;
-		font-size: 38px;
-		line-height: 38px;
-		text-align: center
+		font-size: 24px;
+		line-height: 29px;
+		text-align: center;
+
+		@include desktop {
+			margin-bottom: 24px;
+			font-size: 38px;
+			line-height: 38px;
+		}
 	}
 
 	&__text {
-		font-size: 16px;
-		line-height: 18px;
+		font-size: 14px;
+		line-height: 16px;
+
+		@include desktop {
+			font-size: 16px;
+			line-height: 18px;
+		}
 	}
 }

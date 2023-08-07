@@ -54,9 +54,14 @@
 	}
 
 	&__text {
-		min-height: 38px;
-		font-size: 18px;
-		line-height: 18px;
+		min-height: 32px;
+		font-size: 16px;
+		line-height: 16px;
+
+		@include desktop {
+			min-height: 38px;
+			font-size: 18px;
+			line-height: 18px;}
 
 		.sticker--disabled & {
 			color: rgba($color-white, .5)
