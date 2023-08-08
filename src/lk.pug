@@ -32,7 +32,7 @@ block content
 						.data-card__text-box
 							time.data-card__time 08.07.2023
 							span.data-card__code J8753G6F18KU
-						span.data-card__status.data-card__status--green Одобрен
+						span.data-card__status.data-card__status--green Неверный код
 					// Row
 					.data-card__row
 						.data-card__text-box
@@ -46,7 +46,7 @@ block content
 							span.data-card__code J8753G6F18KU
 						span.data-card__status.data-card__status--green Одобрен
 					.data-card__button-box
-						button.button.button--outline-orange.data-card__refresh-button Обновить
+						button.button.button--outline-orange.data-card__refresh-button Показать еще
 							+svg("refresh")(class="button__icon")
 				// Card
 				.data-card
@@ -65,7 +65,7 @@ block content
 							span.data-card__text Приз  за коллекцию
 						span.data-card__text 45 литров пива
 					.data-card__button-box
-						button.button.button--outline-orange.data-card__refresh-button Обновить
+						button.button.button--outline-orange.data-card__refresh-button Показать еще
 							+svg("refresh")(class="button__icon")
 				// Card
 				.data-card
@@ -129,7 +129,7 @@ block content
 					|человек
 				.section-dashboard__col-grid
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker1", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text ХопГан
@@ -169,17 +169,17 @@ block content
 					| человек
 				.section-dashboard__col-grid
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker5", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text Варочный чан
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker6", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text Солод
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker7", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text Хмель
@@ -216,7 +216,7 @@ block content
 						figcaption
 							p.sticker__text Линия розлива
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker10", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text Этикетировщик
@@ -227,7 +227,7 @@ block content
 						figcaption
 							p.sticker__text Паллеты
 					// Sticker
-					figure.sticker
+					figure.sticker(data-modal="sticker")
 						+picture("sticker12", "jpg")(class="sticker__img")
 						figcaption
 							p.sticker__text Кар
@@ -248,7 +248,7 @@ block content
 				.swiper-wrapper.section-instant__grid
 					.section-instant__grid-col.swiper-slide
 						// Card
-						figure.instant-card.instant-card--bg1
+						figure.instant-card.instant-card--bg1(data-modal="sticker")
 							.instant-card__img-box
 								+picture("instant-card-img1")(class="instant-card__img")
 							figcaption.instant-card__text Майка
@@ -261,7 +261,7 @@ block content
 							figcaption.instant-card__text Худи
 					.section-instant__grid-col.swiper-slide
 						// Card
-						figure.instant-card.instant-card--bg2
+						figure.instant-card.instant-card--bg2(data-modal="sticker")
 							.instant-card__img-box
 								+picture("instant-card-img3")(class="instant-card__img")
 							figcaption.instant-card__text Открывашка
@@ -275,20 +275,20 @@ block content
 								|пива
 					.section-instant__grid-col.swiper-slide
 						// Card
-						figure.instant-card.instant-card--bg4
+						figure.instant-card.instant-card--bg4(data-modal="sticker")
 							.instant-card__img-box
 								+picture("instant-card-img5")(class="instant-card__img")
 							figcaption.instant-card__text Шопер
 					.section-instant__grid-col.swiper-slide
 						// Card
-						figure.instant-card.instant-card--bg5
+						figure.instant-card.instant-card--bg5(data-modal="sticker")
 							.instant-card__img-box
 								+picture("instant-card-img6")(class="instant-card__img")
 							figcaption.instant-card__text Термос *
 								span.instant-card__counter 2
 					.section-instant__grid-col.swiper-slide
 						// Card
-						figure.instant-card.instant-card--bg6
+						figure.instant-card.instant-card--bg6(data-modal="sticker")
 							.instant-card__img-box
 								+picture("instant-card-img7")(class="instant-card__img")
 							figcaption.instant-card__text Волейбольный
@@ -354,3 +354,5 @@ block content
 			|
 			span.text-orange напишите нам
 			|.
+
+	include pug/common-blocks/modals/modal-sticker

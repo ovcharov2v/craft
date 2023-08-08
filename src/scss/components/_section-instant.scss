@@ -90,6 +90,12 @@
 		@include desktop {
 			overflow: hidden;
 		}
+
+		.section-instant--lk & {
+			@include desktop {
+				overflow: unset;
+			}
+		}
 	}
 
 	&__slider-nav {
