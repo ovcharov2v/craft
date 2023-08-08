@@ -13,7 +13,57 @@ block content
 			h1.section-where-buy__title Гду купить?
 			.section-where-buy__content
 				.section-where-buy__button-col
-					.dropdown.dropdown--where-to-buy.section-where-buy__dropdown
+					.section-where-buy__button-scroll-container
+						.dropdown.dropdown--where-to-buy.section-where-buy__dropdown.show-desktop
+							.dropdown__value-box
+								input.dropdown__value(type="text", placeholder="Выберите свой город", disabled, value="Оренбург")
+								+svg("dropdown-arrow")(class="dropdown__arrow")
+							ul.dropdown__options-list
+								li.dropdown__option.dropdown__option--selected(data-value="Оренбург") Оренбург
+								li.dropdown__option(data-value="Москва") Москва
+								li.dropdown__option(data-value="Санкт-Петербург") Санкт-Петербург
+								li.dropdown__option(data-value="Казань") Казань
+								li.dropdown__option(data-value="Новосибирск") Новосибирск
+						// Button
+						.section-where-buy__button
+							.section-where-buy__button-text-box
+								p.section-where-buy__button-text Магазин «Крафт»
+								address.section-where-buy__button-addr
+									+svg("map-marker")(class="section-where-buy__button-addr-icon")
+									|  Пролетарская ул., 288/2
+							+svg("chevron-right")(class="section-where-buy__button-icon")
+						// Button
+						.section-where-buy__button.section-where-buy__button--orange
+							.section-where-buy__button-text-box
+								p.section-where-buy__button-text Магазин «Крафт»
+								address.section-where-buy__button-addr
+									+svg("map-marker")(class="section-where-buy__button-addr-icon")
+									|  ул. Монтажников, 2
+							.section-where-buy__button-icon-box
+								+svg("yandex")(class="section-where-buy__button-icon")
+								+svg("google")(class="section-where-buy__button-icon")
+						// Button
+						.section-where-buy__button
+							.section-where-buy__button-text-box
+								p.section-where-buy__button-text Магазин «Крафт»
+								address.section-where-buy__button-addr
+									+svg("map-marker")(class="section-where-buy__button-addr-icon")
+									|  ул. 60 лет Октября, 9
+							+svg("chevron-right")(class="section-where-buy__button-icon")
+						- var n = 1
+						while n < 10
+							// Button
+							.section-where-buy__button
+								.section-where-buy__button-text-box
+									p.section-where-buy__button-text Магазин «Крафт»
+									address.section-where-buy__button-addr
+										+svg("map-marker")(class="section-where-buy__button-addr-icon")
+										|  ул. 60 лет Октября, 9
+								+svg("chevron-right")(class="section-where-buy__button-icon")
+							- n++
+
+				.section-where-buy__map-col
+					.dropdown.dropdown--where-to-buy.section-where-buy__dropdown.hide-desktop
 						.dropdown__value-box
 							input.dropdown__value(type="text", placeholder="Выберите свой город", disabled, value="Оренбург")
 							+svg("dropdown-arrow")(class="dropdown__arrow")
@@ -23,42 +73,6 @@ block content
 							li.dropdown__option(data-value="Санкт-Петербург") Санкт-Петербург
 							li.dropdown__option(data-value="Казань") Казань
 							li.dropdown__option(data-value="Новосибирск") Новосибирск
-					// Button
-					.section-where-buy__button
-						.section-where-buy__button-text-box
-							p.section-where-buy__button-text Магазин «Крафт»
-							address.section-where-buy__button-addr
-								+svg("map-marker")(class="section-where-buy__button-addr-icon")
-								|  Пролетарская ул., 288/2
-						+svg("chevron-right")(class="section-where-buy__button-icon")
-					// Button
-					.section-where-buy__button.section-where-buy__button--orange
-						.section-where-buy__button-text-box
-							p.section-where-buy__button-text Магазин «Крафт»
-							address.section-where-buy__button-addr
-								+svg("map-marker")(class="section-where-buy__button-addr-icon")
-								|  ул. Монтажников, 2
-						.section-where-buy__button-icon-box
-							+svg("yandex")(class="section-where-buy__button-icon")
-							+svg("google")(class="section-where-buy__button-icon")
-					// Button
-					.section-where-buy__button
-						.section-where-buy__button-text-box
-							p.section-where-buy__button-text Магазин «Крафт»
-							address.section-where-buy__button-addr
-								+svg("map-marker")(class="section-where-buy__button-addr-icon")
-								|  ул. 60 лет Октября, 9
-						+svg("chevron-right")(class="section-where-buy__button-icon")
-					// Button
-					.section-where-buy__button
-						.section-where-buy__button-text-box
-							p.section-where-buy__button-text Магазин «Крафт»
-							address.section-where-buy__button-addr
-								+svg("map-marker")(class="section-where-buy__button-addr-icon")
-								|  ул. 60 лет Октября, 9
-						+svg("chevron-right")(class="section-where-buy__button-icon")
-
-				.section-where-buy__map-col
 					+picture("map", "jpg")(class="section-where-buy__map show-desktop")
 					+picture("map-mobile", "jpg")(class="section-where-buy__map hide-desktop")
 
