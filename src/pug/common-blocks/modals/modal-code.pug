@@ -1,0 +1,26 @@
+// Modal Code
+#code.modal.modal--code
+	.modal__body
+		.modal__content.modal__content--image-left
+			.modal__img-box
+				+picture("modal-img2", "jpg")(class="modal__img")
+			.modal__content-box
+				.modal__title-box
+					.modal__wrap
+						h2.modal__title Зарегистрировать код
+						p.modal__subtitle Ищите код в продукции со знаком
+							br
+							| «Вкус путешествия с «Крафт»
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group
+						label.form-group__label.form-group__label--center Код под крышкой
+						input.form-group__input(type="text", name="code", placeholder="Введите код")
+					p.modal__hint Если у вас есть проблемы с регистрацией кодов,
+						br
+						|пожалуйста,
+						|
+						|
+						a.text-orange(href="#") напишите нам.
+				button.button.button--orange.button--orange-md.modal__btn Отправить

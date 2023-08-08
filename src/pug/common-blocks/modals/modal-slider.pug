@@ -1,0 +1,12 @@
+// Modal Slider
+#slider.modal.modal--slider
+	.modal__body
+		img.modal__progress(src="images/progress.svg", alt)
+		.modal__slider.swiper
+			.swiper-wrapper
+				- var i =1
+				while i < 20
+					// Slide
+					.swiper-slide
+						+picture("sticker"+i, "jpg")(class="modal__slider-img")
+					- i++

@@ -1,0 +1,45 @@
+// Modal Feedback
+#feedback.modal.modal--feedback
+	.modal__body
+		.modal__content
+			.modal__content-box
+				.modal__title-box
+					.modal__wrap
+						h2.modal__title Обратная связь
+						p.modal__subtitle Есть вопросы?
+							|
+							|
+							br.hide-desktop
+							|Напишите нам, и мы ответим в ближайшее время
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group
+						p.form-group__label Тема вопроса
+						.dropdown
+							.dropdown__value-box
+								input.dropdown__value(type="text", placeholder="Выберите тему", disabled)
+								+svg("dropdown-arrow")(class="dropdown__arrow")
+							ul.dropdown__options-list
+								li.dropdown__option(data-value="Тема 1") Тема 1
+								li.dropdown__option(data-value="Тема 2") Тема 2
+								li.dropdown__option(data-value="Тема 3") Тема 3
+					.form-group
+						label.form-group__label E-mail для ответа
+						input.form-group__input(type="email", name="email", placeholder="Введите email")
+					.form-group
+						label.form-group__label Имя Фамилия
+						input.form-group__input(type="text", name="name", placeholder="Введите имя и фамилию")
+					.form-group
+						label.form-group__label Номер телефона
+						input.form-group__input(type="tel", name="phone", value="+7")
+					.form-group
+						label.form-group__label Ваше сообщение
+						textarea.form-group__input.form-group__input--textarea(name="message")
+				label.checkbox.modal__checkbox
+					input.checkbox__input(type="checkbox")
+					span.checkbox__text Даю согласие на обработку
+						|
+						|
+						a.text-orange(href="#") персональных данных
+				button.button.button--orange.button--orange-md.modal__btn Обновить

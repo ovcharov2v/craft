@@ -6,7 +6,7 @@ const modalLinks = document.querySelectorAll('[data-modal]')
 modalLinks.forEach((link) => {
 	link.addEventListener('click', (e) => {
 		e.preventDefault()
-		showModal(e.target.dataset.modal)
+		showModal(link.dataset.modal)
 		return false
 	})
 })

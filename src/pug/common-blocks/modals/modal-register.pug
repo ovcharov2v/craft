@@ -1,0 +1,74 @@
+// Modal Register
+#register.modal.modal--register
+	.modal__body
+		.modal__content
+			.modal__content-box
+				.modal__title-box
+					.modal__wrap
+						h2.modal__title Зарегистрировать код
+						p.modal__subtitle Ищите код в продукции со знаком «Вкус путешествия с «Крафт»
+						p.modal__subtitle Если ранее вы принимали (принимала) участие в акции, то сначала
+							|
+							|
+							a.text-orange(href="#") авторизируйтесь на сайте
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group
+						label.form-group__label Имя
+						input.form-group__input(type="text", name="first-name", placeholder="Введите имя")
+					.form-group
+						label.form-group__label Фамилия
+						input.form-group__input(type="text", name="first-name", placeholder="Введите фамилию")
+					.form-group
+						p.form-group__label Город
+						.dropdown
+							.dropdown__value-box
+								input.dropdown__value(type="text", placeholder="Выберите свой город", disabled)
+								+svg("dropdown-arrow")(class="dropdown__arrow")
+							ul.dropdown__options-list
+								li.dropdown__option(data-value="Оренбург") Оренбург
+								li.dropdown__option(data-value="Москва") Москва
+								li.dropdown__option(data-value="Санкт-Петербург") Санкт-Петербург
+								li.dropdown__option(data-value="Казань") Казань
+								li.dropdown__option(data-value="Новосибирск") Новосибирск
+					.modal__form-panel
+						.form-group
+							label.form-group__label Телефон
+							.form-group__row
+								input.form-group__input(type="tel", name="phone", value="+7")
+								button.button.button--white.form-group__confirm-btn Подтвердить
+						.form-group
+							label.form-group__label.form-group__label--small Введите код из SMS, который мы отправили 5 секунд назад
+							.form-group__row
+								input.form-group__input(type="text", name="code", placeholder="Код")
+								button.button.button--white.form-group__confirm-btn Отправить
+						p.modal__hint Если код не пришёл, запросите
+							|
+							|
+							a.modal__hint-link(href="#") новый код
+					.modal__form-panel
+						.form-group
+							label.form-group__label Email
+							input.form-group__input(type="email", name="email", placeholder="Введите email")
+						p.modal__hint.modal__hint--yellow E-mail ещё не подтверждён.
+						p.modal__hint Для подтверждения e-mail после обновления данных перейдите по ссылке из письма и получите
+							|
+							|
+							span.text-white +50 баллов.
+					.modal__form-panel.modal__form-panel--orange
+						.form-group
+							label.form-group__label Код под крышкой
+							input.form-group__input(type="text", name="code", placeholder="Введите код")
+						p.modal__hint Если вам не приходят коды по смс или есть другие проблемы с регистрацией кодов под крышкой, пожалуйста,
+							|
+							|
+							a.text-orange(href="#") напишите нам
+							|.
+				label.checkbox.modal__checkbox
+					input.checkbox__input(type="checkbox")
+					span.checkbox__text Даю согласие на обработку
+						|
+						|
+						a.text-orange(href="#") персональных данных
+				button.button.button--orange.button--orange-md.modal__btn Отправить

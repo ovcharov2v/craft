@@ -1,0 +1,15 @@
+// Modal Login 3
+#login3.modal.modal--login
+	.modal__body
+		.modal__content.modal__content--image-left
+			.modal__img-box
+				+picture("modal-img1", "jpg")(class="modal__img")
+			.modal__content-box
+				.modal__title-box
+					h2.modal__title.show-desktop Вход в личный кабинет
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__success-box
+					+svg("success")(class="modal__success-icon")
+					p.modal__success-text Ваш номер телефона подтверждён!
+				button.button.button--orange.button--orange-md.modal__btn Войти

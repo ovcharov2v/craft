@@ -1,0 +1,22 @@
+// Modal Login 1
+#login1.modal.modal--login
+	.modal__body
+		.modal__content.modal__content--image-left
+			.modal__img-box
+				+picture("modal-img1", "jpg")(class="modal__img")
+			.modal__content-box
+				.modal__title-box
+					h2.modal__title Вход в личный кабинет
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group
+						label.form-group__label.form-group__label--center Введите свой номер телефона
+						input.form-group__input(type="tel", name="phone", value="+7")
+					label.checkbox.modal__checkbox
+						input.checkbox__input(type="checkbox")
+						span.checkbox__text Даю согласие на обработку
+							|
+							|
+							a.text-orange(href="#") персональных данных
+				button.button.button--orange.button--orange-md.modal__btn(disabled) Далее

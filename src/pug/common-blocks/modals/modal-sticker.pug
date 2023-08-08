@@ -1,0 +1,28 @@
+// Modal Sticker
+#sticker.modal.modal--sticker
+	.modal__body
+		.modal__content
+			.modal__title-box
+				.modal__sticker-box
+					// Sticker
+					figure.sticker.sticker--no-hover.modal__sticker
+						+picture("sticker5", "jpg")(class="sticker__img")
+						figcaption
+							p.sticker__text Варочный чан
+					.modal__wrap
+						p.modal__subtitle Стикер
+						h2.modal__title «Варочный чан»
+						.modal__info-box
+							+svg("info")(class="modal__info-box-icon")
+							p Соберите ещё 1 стикер из коллекции «Варочный цех»
+								|
+								|
+								br.show-desktop
+								|для участия в розыгрыше 45 литров пива
+				button.modal__close.js-modal-close
+							+svg("close")(class="modal__close-icon")
+			.modal__text-block
+				p Варочный чан представляет собой изготовленный из нержавеющей стали цилиндр с двойным сферическим дном и теплоизоляцией для сокращения затрат электроэнергии на подогрев. Целью затирания является максимальное экстрактирование солода и выделение из него необходимых для изготовления сусла ферментов.
+				br
+				p Очень важно, чтобы вода имела определенную степень кислотности. Дело в том, что в щелочной среде процесс выделения сухих веществ резко уменьшается, потому в некоторых случаях для повышения кислотности применяется молочная кислота.
+			button.button.button--orange.button--orange-md.modal__btn.js-modal-close Отлично!

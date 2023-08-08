@@ -1,0 +1,72 @@
+// Modal User
+#user.modal.modal--user
+	.modal__body
+		.modal__content
+			.modal__content-box
+				.modal__title-box
+					.modal__wrap
+						h2.modal__title Мои данные
+						p.modal__subtitle Пожалуйста, введите свои реальные данные, иначе могут быть проблемы при получении призов.
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group.form-group--error
+						label.form-group__label Имя
+						input.form-group__input(type="text", name="first-name", placeholder="Введите имя")
+						span.form-group__error-text Текст ошибки
+					.form-group
+						label.form-group__label Фамилия
+						input.form-group__input(type="text", name="first-name", placeholder="Введите фамилию")
+					.form-group
+						p.form-group__label Пол
+						.form-group__option-row
+							label.option
+								input.option__input(type="radio", name="gender")
+								p.option__text
+									|Муж
+									+svg("male")(class="option__icon")
+							label.option
+								input.option__input(type="radio", name="gender")
+								p.option__text
+									| Жен
+									+svg("female")(class="option__icon")
+					.form-group
+						p.form-group__label Город
+						.dropdown
+							.dropdown__value-box
+								input.dropdown__value(type="text", placeholder="Выберите свой город", disabled)
+								+svg("dropdown-arrow")(class="dropdown__arrow")
+							ul.dropdown__options-list
+								li.dropdown__option(data-value="Оренбург") Оренбург
+								li.dropdown__option(data-value="Москва") Москва
+								li.dropdown__option(data-value="Санкт-Петербург") Санкт-Петербург
+								li.dropdown__option(data-value="Казань") Казань
+								li.dropdown__option(data-value="Новосибирск") Новосибирск
+					.form-group.mb24
+						label.form-group__label Дата рождения
+						input.form-group__input(type="text", name="first-name", value="12.12.2000")
+					.modal__form-panel
+						.form-group
+							label.form-group__label Телефон
+							.form-group__row
+								input.form-group__input(type="tel", name="phone", value="+7")
+								button.button.button--white.form-group__confirm-btn Подтвердить
+						.form-group
+							label.form-group__label.form-group__label--small Введите код из SMS, который мы отправили 5 секунд назад
+							.form-group__row
+								input.form-group__input(type="text", name="code", placeholder="Код")
+								button.button.button--white.form-group__confirm-btn Отправить
+						p.modal__hint Если код не пришёл, запросите
+							|
+							|
+							a.modal__hint-link(href="#") новый код
+					.modal__form-panel
+						.form-group
+							label.form-group__label Email
+							input.form-group__input(type="email", name="email", placeholder="Введите email")
+						p.modal__hint.modal__hint--yellow E-mail ещё не подтверждён.
+						p.modal__hint Для подтверждения e-mail после обновления данных перейдите по ссылке из письма и получите
+							|
+							|
+							span.text-white +50 баллов.
+				button.button.button--orange.button--orange-md.modal__btn Обновить

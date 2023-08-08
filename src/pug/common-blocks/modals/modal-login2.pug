@@ -1,0 +1,23 @@
+// Modal Login 2
+#login2.modal.modal--login
+	.modal__body
+		.modal__content.modal__content--image-left
+			.modal__img-box
+				+picture("modal-img1", "jpg")(class="modal__img")
+			.modal__content-box
+				.modal__title-box
+					h2.modal__title Вход в личный кабинет
+					button.modal__close.js-modal-close
+						+svg("close")(class="modal__close-icon")
+				.modal__wrap
+					.form-group
+						label.form-group__label.form-group__label--small.form-group__label--center Введите код из SMS, который мы отправили 5 секунд назад
+						input.form-group__input(type="text", name="code", placeholder="Код")
+					p.modal__hint Если код не пришёл, запросите
+						|
+						|
+						a.modal__hint-link(href="#") новый код
+				button.button.button--orange.button--orange-md.modal__btn(disabled) Подтвердить
+				button.modal__button-back
+					+svg("arrow-back")(class="modal__button-back-icon")
+					|Изменить телефон
