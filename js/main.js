@@ -214,15 +214,31 @@ function closeAllSelects() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+/* harmony import */ var flatpickr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/esm/index.js");
+/* harmony import */ var flatpickr_dist_l10n_ru_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flatpickr/dist/l10n/ru.js */ "./node_modules/flatpickr/dist/l10n/ru.js");
+/* harmony import */ var flatpickr_dist_l10n_ru_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flatpickr_dist_l10n_ru_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var phoneInputList = document.querySelectorAll('input[type="tel"]');
-  if (!phoneInputList.length) return;
-  phoneInputList.forEach(function (phoneInput) {
-    Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(phoneInput, {
-      mask: '+{7} 000 000 00 00'
+  if (phoneInputList.length) {
+    phoneInputList.forEach(function (phoneInput) {
+      Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(phoneInput, {
+        mask: '+{7} 000 000 00 00'
+      });
     });
-  });
+  }
+  var dateInputList = document.querySelectorAll('.form-group__input--date');
+  if (dateInputList.length) {
+    console.log(1);
+    dateInputList.forEach(function (dateInput) {
+      Object(flatpickr__WEBPACK_IMPORTED_MODULE_1__["default"])(dateInput, {
+        "locale": flatpickr_dist_l10n_ru_js__WEBPACK_IMPORTED_MODULE_2__["Russian"],
+        dateFormat: "d.m.Y"
+      });
+    });
+  }
 });
 
 /***/ }),
@@ -299,7 +315,7 @@ var modalLinks = document.querySelectorAll('[data-modal]');
 modalLinks.forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault();
-    showModal(e.target.dataset.modal);
+    showModal(link.dataset.modal);
     return false;
   });
 });
@@ -383,6 +399,34 @@ var initSlider = function initSlider(modal) {
     slider.slideNext();
   }, 1000, slider);
 };
+
+/***/ }),
+
+/***/ "./src/js/components/_section-data.js":
+/*!********************************************!*\
+  !*** ./src/js/components/_section-data.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', function () {
+  var loadMoreBtnList = document.querySelectorAll('.data-card__more-button');
+  if (!loadMoreBtnList.length) return;
+  loadMoreBtnList.forEach(function (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function () {
+      var hiddenRows = loadMoreBtn.closest('.data-card').querySelectorAll('.data-card__row--hidden');
+      if (!hiddenRows.length) return;
+      hiddenRows.forEach(function (row, index) {
+        row.classList.add('data-card__row--hide');
+        row.classList.remove('data-card__row--hidden');
+        setInterval(function () {
+          row.classList.remove('data-card__row--hide');
+        }, 70 * index);
+      });
+      loadMoreBtn.classList.add('data-card__more-button--hidden');
+    });
+  });
+});
 
 /***/ }),
 
@@ -498,12 +542,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/_header */ "./src/js/components/_header.js");
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_section_instant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/_section-instant */ "./src/js/components/_section-instant.js");
-/* harmony import */ var _components_section_winners__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/_section-winners */ "./src/js/components/_section-winners.js");
-/* harmony import */ var _components_section_winners__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_section_winners__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/_dropdown */ "./src/js/components/_dropdown.js");
-/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_dropdown__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/_modal */ "./src/js/components/_modal.js");
-/* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/_form */ "./src/js/components/_form.js");
+/* harmony import */ var _components_section_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/_section-data */ "./src/js/components/_section-data.js");
+/* harmony import */ var _components_section_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_section_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_section_winners__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/_section-winners */ "./src/js/components/_section-winners.js");
+/* harmony import */ var _components_section_winners__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_section_winners__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/_dropdown */ "./src/js/components/_dropdown.js");
+/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_dropdown__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/_modal */ "./src/js/components/_modal.js");
+/* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/_form */ "./src/js/components/_form.js");
+
 
 
 

@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
 		<title>Модальные окна</title>
-		<link rel="stylesheet" href="./css/main.css?v=1691463928207">
+		<link rel="stylesheet" href="./css/main.css?v=1691532997720">
 	</head>
 	<body>
 		<main class="main">
@@ -21,9 +21,11 @@
 					<button class="button button--orange button--orange-sm" data-modal="success-modal">Успешно отправлено</button><br>
 					<button class="button button--orange button--orange-sm" data-modal="score-sticker">Баллы и стикер</button><br>
 					<button class="button button--orange button--orange-sm" data-modal="sticker">Стикер</button><br>
+					<button class="button button--orange button--orange-sm" data-modal="sticker-beer">Стикер Пиво</button><br>
 					<button class="button button--orange button--orange-sm" data-modal="slider">Слайдер</button>
 				</div>
 			</section>
+			<!-- Modals-->
 			<!-- Modal Login 1-->
 			<div class="modal modal--login" id="login1">
 				<div class="modal__body">
@@ -326,7 +328,7 @@
 								</div>
 								<div class="form-group mb24">
 									<label class="form-group__label">Дата рождения</label>
-									<input class="form-group__input" type="text" name="first-name" value="12.12.2000">
+									<input class="form-group__input form-group__input--date" type="text" name="first-name" value="12.12.2000">
 								</div>
 								<div class="modal__form-panel">
 									<div class="form-group">
@@ -489,7 +491,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Modal Score and Sticker-->
+			<!-- Modal Sticker-->
 			<div class="modal modal--sticker" id="sticker">
 				<div class="modal__body">
 					<div class="modal__content">
@@ -532,6 +534,51 @@
 					</div>
 				</div>
 			</div>
+			<!-- Modal Sticker Beer-->
+			<div class="modal modal--sticker" id="sticker-beer">
+				<div class="modal__body">
+					<div class="modal__content">
+						<div class="modal__title-box">
+							<div class="modal__sticker-box">
+								<!-- Sticker-->
+								<figure class="sticker sticker--no-hover modal__sticker">
+									<picture>
+										<source srcset="images/sticker16@1x.webp, images/sticker16@2x.webp 2x" type="image/webp"/><img class="sticker__img" src="images/sticker16@1x.jpg" srcset="images/sticker16@2x.jpg 2x" alt=""/>
+									</picture>
+									<figcaption>
+										<p class="sticker__text">Бутылка крафтового пива</p>
+									</figcaption>
+								</figure>
+								<div class="modal__wrap">
+									<h2 class="modal__title">Поздравляем! Ваш мгновенный приз – бутылка крафтового пива</h2>
+									<div class="modal__info-box">
+										<svg class="modal__info-box-icon">
+											<use xlink:href="#info"></use>
+										</svg>
+										<p>Регистрируйте больше кодов, получайте больше призов.</p>
+									</div>
+								</div>
+							</div>
+							<button class="modal__close js-modal-close">
+								<svg class="modal__close-icon">
+									<use xlink:href="#close"></use>
+								</svg>
+							</button>
+						</div>
+						<div class="modal__text-block">
+							<p>Хмель в пивоварении применяют с давних времен. Но так было не всегда. Когда-то пиво варили на смеси разных горьких трав. Точно неизвестно, кто впервые сварил пиво с хмелем, и когда это произошло.</p>
+							<p>По одной из версий пиво придумали кочующие славянские народы, оказавшиеся на территории Римской империи примерно в V веке нашей эры. По другой – хмель уже выращивали в Европе в I веке нашей эры, но активно его начали добавлять при изготовлении пива примерно в XII веке.</p>
+							<p>С древних времен и в хлебопечении и в приготовлении пива и эля использовали хмель. Вы видели, как растет хмель? Его соцветия похожи на шишки. Их так и называют – шишки хмеля. Если сорвать шишку и высушить из нее посыплется липкий желтый порошок.</p>
+							<p>Это лупулин. Именно в нем содержатся микроэлементы, от которых зависит горечь пива, его аромат и пенная шапка. Они также увеличиваю срок хранения пива. Ведь благодаря этому можно насладиться пивом где угодно. Только представьте: пикник в  ближайшем парке, мягкий плед на зеленой лужайке, легкие закуски, приятная компания! Ммм… как хорошо! 🍻      </p>
+							<p>Как же все-таки хорошо, что теперь не собирают дикий хмель, а выращивают его в промышленных масштабах. Выращивают, а что потом? Давайте проследим!</p>
+							<p>Шишки хмеля собирают в начале осени. Стебли и листья удаляют, а шишки отправляют сушиться при температуре 63 градуса. При более низкой температуре может образоваться плесень. Пересушить тоже нельзя, чтобы не пропали свойства лупулина. Хорошо просушенный хмель пакуют в плотные мешки.</p>
+							<p>Для приготовления пива используют сами шишки, как в старину. А можно в форме брикетов, гранулированный хмель или хмелевой экстракт. Используя хмель в таком виде, удобнее контролировать качество напитка и обеспечивать стабильность вкуса разных сортов.</p>
+							<p>Какой бы сорт пива вы ни выбрали, позвольте себе насладиться им в полной мере. Например, возьмите его на природу и получите удовольствие от каждого глотка прохладного пенного напитка в тени деревьев под пение птиц!</p>
+						</div>
+						<button class="button button--orange button--orange-md modal__btn js-modal-close">Отлично!</button>
+					</div>
+				</div>
+			</div>
 			<!-- Modal Slider-->
 			<div class="modal modal--slider" id="slider">
 				<div class="modal__body"><img class="modal__progress" src="images/progress.svg" alt>
@@ -540,73 +587,115 @@
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker1@1x.webp, images/sticker1@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker1@1x.jpg" srcset="images/sticker1@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker2@1x.webp, images/sticker2@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker2@1x.jpg" srcset="images/sticker2@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker3@1x.webp, images/sticker3@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker3@1x.jpg" srcset="images/sticker3@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker4@1x.webp, images/sticker4@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker4@1x.jpg" srcset="images/sticker4@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker5@1x.webp, images/sticker5@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker5@1x.jpg" srcset="images/sticker5@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker6@1x.webp, images/sticker6@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker6@1x.jpg" srcset="images/sticker6@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker7@1x.webp, images/sticker7@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker7@1x.jpg" srcset="images/sticker7@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker8@1x.webp, images/sticker8@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker8@1x.jpg" srcset="images/sticker8@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker9@1x.webp, images/sticker9@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker9@1x.jpg" srcset="images/sticker9@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker10@1x.webp, images/sticker10@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker10@1x.jpg" srcset="images/sticker10@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker11@1x.webp, images/sticker11@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker11@1x.jpg" srcset="images/sticker11@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 							<!-- Slide-->
 							<div class="swiper-slide">
 								<picture>
-									<source srcset="images/slider-placeholder@1x.webp, images/slider-placeholder@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/slider-placeholder@1x.jpg" srcset="images/slider-placeholder@2x.jpg 2x" alt=""/>
+									<source srcset="images/sticker12@1x.webp, images/sticker12@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker12@1x.jpg" srcset="images/sticker12@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker13@1x.webp, images/sticker13@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker13@1x.jpg" srcset="images/sticker13@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker14@1x.webp, images/sticker14@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker14@1x.jpg" srcset="images/sticker14@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker15@1x.webp, images/sticker15@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker15@1x.jpg" srcset="images/sticker15@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker16@1x.webp, images/sticker16@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker16@1x.jpg" srcset="images/sticker16@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker17@1x.webp, images/sticker17@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker17@1x.jpg" srcset="images/sticker17@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker18@1x.webp, images/sticker18@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker18@1x.jpg" srcset="images/sticker18@2x.jpg 2x" alt=""/>
+								</picture>
+							</div>
+							<!-- Slide-->
+							<div class="swiper-slide">
+								<picture>
+									<source srcset="images/sticker19@1x.webp, images/sticker19@2x.webp 2x" type="image/webp"/><img class="modal__slider-img" src="images/sticker19@1x.jpg" srcset="images/sticker19@2x.jpg 2x" alt=""/>
 								</picture>
 							</div>
 						</div>
@@ -792,7 +881,7 @@
 	</symbol>
 </svg>
 
-		<script src="./js/vendor.js?v=1691463928208"></script>
-		<script src="./js/main.js?v=1691463928208"></script>
+		<script src="./js/vendor.js?v=1691532997721"></script>
+		<script src="./js/main.js?v=1691532997721"></script>
 	</body>
 </html>
