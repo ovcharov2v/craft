@@ -234,30 +234,49 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function headerWatcher() {
+document.addEventListener('DOMContentLoaded', function () {
   var header = document.querySelector('.header');
   if (!header) return;
-  var isHeaderFixed = header.classList.contains('header--fixed');
-  if (window.scrollY < 600) {
-    if (isHeaderFixed) {
-      header.style.transform = 'translateY(-100%)';
-      setTimeout(function () {
-        header.classList.remove('header--fixed');
-        header.style.transform = '';
-      }, 300);
+  (function headerWatcher() {
+    if (window.innerWidth >= 1024) {
+      var isHeaderFixed = header.classList.contains('header--fixed');
+      if (window.scrollY < 600) {
+        if (isHeaderFixed) {
+          header.style.transform = 'translateY(-100%)';
+          setTimeout(function () {
+            header.classList.remove('header--fixed');
+            header.style.transform = '';
+          }, 300);
+        }
+      } else {
+        if (!isHeaderFixed) {
+          header.style.transform = 'translateY(-100%)';
+          setTimeout(function () {
+            header.classList.add('header--fixed');
+            header.style.transform = '';
+          }, 300);
+        }
+      }
     }
-  } else {
-    if (!isHeaderFixed) {
-      header.style.transform = 'translateY(-100%)';
+    requestAnimationFrame(headerWatcher);
+  })();
+  var menuBtn = header.querySelector('.header__menu-btn');
+  menuBtn.addEventListener('click', function () {
+    header.classList.add('header--menu-animate');
+    setTimeout(function () {
+      if (header.classList.contains('header--menu-show')) {
+        header.classList.remove('header--menu-show');
+        document.body.style.overflow = '';
+      } else {
+        header.classList.add('header--menu-show');
+        document.body.style.overflow = 'hidden';
+      }
       setTimeout(function () {
-        header.classList.add('header--fixed');
-        header.style.transform = '';
+        header.classList.remove('header--menu-animate');
       }, 300);
-    }
-  }
-  requestAnimationFrame(headerWatcher);
-}
-headerWatcher();
+    });
+  });
+});
 
 /***/ }),
 
@@ -381,18 +400,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  var sliderEl = document.querySelector('.section-instant__slider .swiper');
-  if (!sliderEl) return;
-  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"]],
-    slidesPerView: 4,
-    spaceBetween: 24,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".section-instant__slider-btn--next",
-      prevEl: ".section-instant__slider-btn--prev"
+  var sliderEl = document.querySelector('.section-instant--prize-and-rules .section-instant__slider-elem');
+  if (sliderEl) {
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"]],
+      slidesPerView: 2.2,
+      spaceBetween: 8,
+      grabCursor: true,
+      navigation: {
+        nextEl: ".section-instant__slider-btn--next",
+        prevEl: ".section-instant__slider-btn--prev"
+      },
+      breakpoints: {
+        560: {
+          slidesPerView: 3.2,
+          spaceBetween: 8
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24
+        }
+      }
+    });
+  }
+  var sliderLk;
+  var sliderLkEl = document.querySelector('.section-instant--lk .section-instant__slider-elem');
+  var initLkSlider = function initLkSlider() {
+    var width = window.innerWidth;
+    if (width > 1024) {
+      if (sliderLk !== undefined) {
+        sliderLk.destroy(true, true);
+        sliderLk = undefined;
+      }
+    } else {
+      if (sliderLk === undefined) {
+        sliderLk = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderLkEl, {
+          slidesPerView: 1.2,
+          spaceBetween: 24,
+          grabCursor: true,
+          breakpoints: {
+            560: {
+              slidesPerView: 2.2
+            },
+            768: {
+              slidesPerView: 3.2
+            }
+          }
+        });
+      }
     }
-  });
+  };
+  if (sliderLkEl) {
+    initLkSlider();
+    window.addEventListener('resize', initLkSlider, true);
+  }
 });
 
 /***/ }),
