@@ -47,13 +47,13 @@
 	}
 
 	&__nav {
-		position: absolute;
+		position: fixed;
 		display: none;
 		flex-direction: column;
-		top: 100%;
+		top: 58px;
 		left: 0;
 		width: 100%;
-		height: calc(100vh - 58px);
+		height: calc(100% - 58px);
 		padding: 24px 24px 48px;
 		background-color: #171717;
 		transition: transform 0.3s ease-in-out, opacity 0.7s ease;
@@ -61,6 +61,10 @@
 		transform: perspective(600px) translateX(350px) rotateY(-45deg) scale(0.7);
 		transform-origin: 100% 50%;
 		overflow-y: auto;
+
+		@media (orientation: landscape) and (max-height: 600px) {
+			padding-bottom: 24px;
+		}
 
 		&--left {
 			@include desktop {
@@ -98,6 +102,12 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		overflow-y: auto;
+		text-align: center;
+
+		@media (orientation: landscape) and (max-height: 600px) {
+			display: block;
+		}
 
 		@include desktop {
 			flex-grow: 0;
@@ -105,6 +115,7 @@
 			justify-content: unset;
 			align-items: unset;
 			margin: 0 -12px;
+			overflow-y: unset;
 		}
 
 		.header__nav--left & {
@@ -114,21 +125,31 @@
 	}
 
 	&__nav-elem {
-		padding: 0 12px;
+		margin-bottom: 50px;
+
+		@media (orientation: landscape) and (max-height: 600px) {
+			margin-bottom: 16px;
+		}
+
+		@include desktop {
+			margin-bottom: 0;
+			padding: 0 12px;
+		}
 
 		.header__nav--left & {
-			padding: 0 16px;
+			@include desktop {
+				padding: 0 16px;
+			}
 		}
 	}
 
 	&__nav-link {
 		position: relative;
 		display: block;
-		margin-bottom: 50px;
 		font-size: 24px;
+		white-space: nowrap;
 
 		@include desktop {
-			margin-bottom: 0;
 			font-size: 18px;
 		}
 
@@ -178,7 +199,7 @@
 			border-radius: 100px;
 			width: 100%;
 			max-width: 340px;
-			margin: 0 auto;
+			margin: 24px auto 0;
 			padding: 16px;
 
 			@include desktop {

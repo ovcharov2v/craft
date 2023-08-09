@@ -9,11 +9,11 @@ mixin header()
 			nav.header__nav(class=isHeaderMenuLeft?"header__nav--left":"")
 				ul.header__nav-list
 					li.header__nav-elem
-						a.header__nav-link.header__nav-link--active(href="#") Правила и призы
+						a.header__nav-link(href="./rules-and-prizes.html", class=(page==="rules-and-prizes"?"header__nav-link--active":"")) Правила и призы
 					li.header__nav-elem
-						a.header__nav-link(href="#") Победители
+						a.header__nav-link(href="./winners.html", class=(page==="winners"?"header__nav-link--active":"")) Победители
 					li.header__nav-elem
-						a.header__nav-link(href="#") Где купить
+						a.header__nav-link(href="./where-to-buy.html", class=(page==="where-to-buy"?"header__nav-link--active":"")) Где купить
 					li.header__nav-elem
 						a.header__nav-link(href="#") Обратная связь
 				if isUserLoggedIn
