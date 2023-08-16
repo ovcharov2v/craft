@@ -66,13 +66,6 @@
 			padding-bottom: 24px;
 		}
 
-		&--left {
-			@include desktop {
-				margin-left: 48px;
-				margin-right: auto;
-			}
-		}
-
 		.header--menu-animate & {
 			display: flex;
 		}
@@ -117,11 +110,6 @@
 			margin: 0 -12px;
 			overflow-y: unset;
 		}
-
-		.header__nav--left & {
-			margin: 0 -16px;
-		}
-
 	}
 
 	&__nav-elem {
@@ -134,12 +122,6 @@
 		@include desktop {
 			margin-bottom: 0;
 			padding: 0 12px;
-		}
-
-		.header__nav--left & {
-			@include desktop {
-				padding: 0 16px;
-			}
 		}
 	}
 
