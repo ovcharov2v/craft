@@ -940,10 +940,6 @@ a {
     @media (orientation: landscape) and (max-height: 600px) {
       .header__nav {
         padding-bottom: 24px; } }
-    @media (min-width: 1024px) {
-      .header__nav--left {
-        margin-left: 48px;
-        margin-right: auto; } }
     .header--menu-animate .header__nav {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1007,8 +1003,6 @@ a {
                 align-items: unset;
         margin: 0 -12px;
         overflow-y: unset; } }
-    .header__nav--left .header__nav-list {
-      margin: 0 -16px; }
   .header__nav-elem {
     margin-bottom: 50px; }
     @media (orientation: landscape) and (max-height: 600px) {
@@ -1018,9 +1012,6 @@ a {
       .header__nav-elem {
         margin-bottom: 0;
         padding: 0 12px; } }
-    @media (min-width: 1024px) {
-      .header__nav--left .header__nav-elem {
-        padding: 0 16px; } }
   .header__nav-link {
     position: relative;
     display: block;
